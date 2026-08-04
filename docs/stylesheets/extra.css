@@ -22,14 +22,46 @@ body:has(.ar-hero) .md-tabs {
   display: none;
 }
 
-/* Homepage hero + section cards - sized to fill the viewport below the
-   header, similar to ad-rem.com/nl's homepage. */
+/* Homepage: lock the page to the viewport height on screens roomy
+   enough for it (no scrolling), by turning header/main/footer into a
+   flex column so the hero+cards block exactly fills whatever space is
+   left over - rather than guessing header/footer heights in px/vh,
+   which drifts out of sync whenever either changes. */
+@media screen and (min-width: 45em) {
+  body:has(.ar-hero) {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  body:has(.ar-hero) .md-container,
+  body:has(.ar-hero) .md-main,
+  body:has(.ar-hero) .md-main__inner,
+  body:has(.ar-hero) .md-content,
+  body:has(.ar-hero) .md-content__inner {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+  }
+
+  .ar-home {
+    flex: 1;
+    min-height: 0;
+  }
+
+  .ar-hero {
+    flex: 1;
+    min-height: 0;
+  }
+}
+
+/* Homepage hero + section cards */
 .ar-home {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   gap: 1.5rem;
-  min-height: calc(100vh - 4.8rem - 6rem);
   padding: 1.5rem 0;
 }
 
@@ -37,10 +69,10 @@ body:has(.ar-hero) .md-tabs {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 55vh;
+  min-height: 30vh;
   background-color: var(--md-primary-fg-color);
   border-radius: 1rem;
-  padding: 3rem 2rem;
+  padding: 2rem;
   text-align: center;
 }
 
@@ -55,18 +87,19 @@ body:has(.ar-hero) .md-tabs {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
+  flex-shrink: 0;
 }
 
 .ar-card {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 12rem;
-  padding: 2rem;
+  min-height: 8rem;
+  padding: 1.5rem;
   border-radius: 0.75rem;
   background-color: #f4f2ee;
   color: var(--md-primary-fg-color);
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-weight: 500;
   text-align: center;
   text-decoration: none;
@@ -81,20 +114,6 @@ body:has(.ar-hero) .md-tabs {
 }
 
 @media screen and (max-width: 44.9375em) {
-  .ar-home {
-    min-height: 0;
-  }
-
-  .ar-hero {
-    min-height: 40vh;
-    padding: 3rem 1.5rem;
-  }
-
-  .ar-card {
-    min-height: 8rem;
-    font-size: 1.25rem;
-  }
-
   .ar-card-grid {
     grid-template-columns: 1fr;
   }
