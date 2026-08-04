@@ -79,3 +79,6 @@ extra:
       name: Ad Rem on LinkedIn
 
 copyright: ©2026 Ad Rem
+
+plugins:
+  - privacy
