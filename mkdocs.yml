@@ -63,6 +63,14 @@ markdown_extensions:
   - admonition
   - pymdownx.details
 
+  # Add aditional icons
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      options:
+        custom_icons:
+          - overrides/.icons
+
 extra:
   generator: false
   social:
@@ -70,4 +78,4 @@ extra:
       link: https://www.linkedin.com/company/advanced-design-of-recycling-machines/posts/?feedView=all
       name: Ad Rem on LinkedIn
 
-copyright: Copyright &copy; 2026 Laurens De Bel
+copyright: ©2026 Ad Rem
