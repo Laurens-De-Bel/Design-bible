@@ -1,12 +1,21 @@
 extra_css:
   - stylesheets/extra.css
 
-site_name: Ad Rem engineering bible
+site_name: Engineering bible
 site_url: https://adrem-engineering-bible.com
 theme:
   name: material
+
   font:
     text: Roboto
+
+  logo: assets/AdRem_name+logo_White.png
+  favicon: assets/AdRem_logo_White.png
+
+  # # add navigation footer to the site
+  # features:
+  #   - navigation.footer
+
   palette:
     # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
@@ -29,3 +38,34 @@ theme:
         icon: material/brightness-4
         name: Switch to system preference
       primary: custom
+
+markdown_extensions:
+  # Enable code hightlighting and line numbers
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+  # Enable content tabs
+  - pymdownx.tabbed:
+      alternate_style: true
+
+  # Enable admonitions
+  - admonition
+  - pymdownx.details
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/advanced-design-of-recycling-machines/posts/?feedView=all
+      name: Ad Rem on LinkedIn
+
+copyright: Copyright &copy; 2026 Laurens De Bel
