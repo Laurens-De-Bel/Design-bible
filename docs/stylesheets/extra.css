@@ -1,3 +1,101 @@
 :root  > * {
   --md-primary-fg-color:        #2c0600;
 }
+
+/* White header so the dark logo stays legible. */
+.md-header {
+  background-color: #fff;
+  color: var(--md-primary-fg-color);
+}
+
+.md-header .md-search__input + .md-search__icon {
+  color: var(--md-default-fg-color--light);
+}
+
+/* Hide the tabs row only on the homepage. Done in CSS (keyed off the
+   hero markup that instant-navigation swaps in with the page content)
+   rather than by omitting the tabs from the page's HTML, because the
+   header itself is NOT re-rendered on instant navigation - server-side
+   removal left the tabs missing after clicking from the homepage into
+   a section until a full page reload. */
+body:has(.ar-hero) .md-tabs {
+  display: none;
+}
+
+/* Homepage hero + section cards - sized to fill the viewport below the
+   header, similar to ad-rem.com/nl's homepage. */
+.ar-home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+  min-height: calc(100vh - 4.8rem - 6rem);
+  padding: 1.5rem 0;
+}
+
+.ar-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 55vh;
+  background-color: var(--md-primary-fg-color);
+  border-radius: 1rem;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.ar-hero h1 {
+  color: #fff;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 400;
+  margin: 0;
+}
+
+.ar-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.ar-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 12rem;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  background-color: #f4f2ee;
+  color: var(--md-primary-fg-color);
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow 0.15s, transform 0.15s;
+}
+
+.ar-card:hover,
+.ar-card:focus {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+  color: var(--md-primary-fg-color);
+}
+
+@media screen and (max-width: 44.9375em) {
+  .ar-home {
+    min-height: 0;
+  }
+
+  .ar-hero {
+    min-height: 40vh;
+    padding: 3rem 1.5rem;
+  }
+
+  .ar-card {
+    min-height: 8rem;
+    font-size: 1.25rem;
+  }
+
+  .ar-card-grid {
+    grid-template-columns: 1fr;
+  }
+}

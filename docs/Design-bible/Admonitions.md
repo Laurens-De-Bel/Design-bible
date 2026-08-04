@@ -6,8 +6,6 @@
     nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
     massa, nec semper lorem quam in massa.
 
-
-
 Collapsible callout:
 
 ??? info "Collapsible callout"
