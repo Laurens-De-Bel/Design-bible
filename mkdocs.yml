@@ -1,3 +1,5 @@
+# Startup: mkdocs serve
+
 extra_css:
   - stylesheets/extra.css
 
