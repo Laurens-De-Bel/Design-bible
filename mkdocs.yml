@@ -89,6 +89,9 @@ markdown_extensions:
 
   - attr_list
 
+  # Enable data tables
+  - tables
+
 extra:
   generator: false
   social:
@@ -101,11 +104,21 @@ copyright: ©2026 Ad Rem
 nav:
   - Design playbook:
     - Design-playbook/index.md
-    - Design-playbook/Admonitions.md
-    - Diagram examples:
-      - Design-playbook/Test submap/index.md
-      - Design-playbook/Test submap/test1.md
-      - Design-playbook/Test submap/test2.md
+    - Design-playbook/Guidelines-and-structure.md
+    - Design-playbook/Corrupt-parts.md
+    - Design-playbook/Bolt-connections.md
+    - Design-playbook/Hole-slot-dimensions.md
+    - Design-playbook/Structure-and-platform-information.md
+    - Design-playbook/Mounting-machine-parts-on-structures.md
+    - Design-playbook/Sheet-metal-information.md
+    - Design-playbook/Info-LaserCut.md
+    - Design-playbook/Info-Saw-Work-SW.md
+    - Design-playbook/Database-agreements.md
+    - Design-playbook/Welding.md
+    - Design-playbook/Platforms.md
+    - Design-playbook/Geared-motors-Siemens.md
+    - Design-playbook/Classification.md
+    - Design-playbook/Norms-on-electrics.md
   - Calculators:
     - Calculators/index.md
     - Calculators/Content-tabs-with-code.md
