@@ -7,40 +7,35 @@
 - Use round numbers to position the holes (e.g. 10, 20, 100, 150, ...).
 - **Connection flanges at least 10mm thickness.**
 
-**Example**
+**Example A**
+
+![Connection detail - top inset](../assets/design-playbook/structure-and-platform-information/image67-69.png){ .center }
+
+**Example B**
 
 ![Structure column with connection detail insets](../assets/design-playbook/structure-and-platform-information/image66.png){ .center }
-![Connection detail - top inset](../assets/design-playbook/structure-and-platform-information/image67.png){ .center }
-![Connection detail - bottom inset](../assets/design-playbook/structure-and-platform-information/image68.png){ .center }
-![Column base plate with 50mm distance from the side wall](../assets/design-playbook/structure-and-platform-information/image69.png){ width="300" .center }
 
 !!! warning "Remark"
     Don't use vertical slots with horizontal beams, to prevent sliding down.
 
 ## Fasteners size
 
-**M20:** General structure build
-
-**M16:** Reinforcements on structure build
-
 ![Structure frame using M20 general build and M16 reinforcements](../assets/design-playbook/structure-and-platform-information/image70.png){ .center }
 
 ![Reinforcement detail using M16 fasteners](../assets/design-playbook/structure-and-platform-information/image71.png){ .center }
 
-**M16:** Machines or attachment to structure
+## ID numbering in WA and parts
 
-![Machine attachment to structure using M16 fasteners](../assets/design-playbook/structure-and-platform-information/image72.png){ .center }
-
-## ID numbering in WA en parts
-
-In each WA or Part we need an ID number welded on it. The ID is made up of three characters: `ABB`
+In each WA or Part we need an ID number welded on it. The ID is made up of three characters: ABB
 
 - A: the ranking number of the zone
-- BB: a sequence number (0 to 99, following A0 to A9)
+- BB: a sequence number (0 to 99, following A0 to A99)
 
-If possible, start the sequence numbers as how to build up.
+If possible, start the sequence numbers in order of how to build the structure.
 
-The Excel list must be used by the supplier to weld the ID number on the parts.
+The ID's are stored in an Excel called the global numbering file. An example can be found here: W:\RenD\Projecten 2026\AG26-001 - UDOM - Integration additional equipment\02-Supplier_info\AG26-001-10 - Structures\AG26-001-GLOBAL-Numbering-File.xlsx
+
+The global numbering file must be used by the supplier to weld the ID number on the parts.
 
 ![Excel list used by the supplier for ID numbering](../assets/design-playbook/structure-and-platform-information/image73.png){ .center }
 

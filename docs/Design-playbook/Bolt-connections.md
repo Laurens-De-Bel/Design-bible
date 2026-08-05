@@ -41,17 +41,23 @@ Fasteners material: electrolytic galvanizing (ELVZ) or INOX A2\*
 === "Hole"
     ![Bolt through a hole](../assets/design-playbook/bolt-connections/image59.png){ width="140" .center }
 
+    | Component | Standard / norm |
+    | --- | --- |
+    | Hexagon head bolt | DIN 933 / DIN 931 |
+    | Hexagon locknut | DIN 985 |
+    | Regular plain washer | DIN 125 |
+
 === "Slot"
-    ![Bolt through a slot](../assets/design-playbook/bolt-connections/image60.png){ width="140" .center }
+    ![Bolt through a slot](../assets/design-playbook/bolt-connections/image60.png){ width="168" .center }
 
-| Component | Standard / norm |
-| --- | --- |
-| Hexagon head bolt | DIN 933 / DIN 931 |
-| Hexagon locknut | DIN 985 |
-| Regular plain washer | DIN 125 |
-| Large plain washer | DIN 9021 |
+    | Component | Standard / norm |
+    | --- | --- |
+    | Hexagon head bolt | DIN 933 / DIN 931 |
+    | Hexagon locknut | DIN 985 |
+    | Large plain washer | DIN 9021 |
 
-\*Remark: Always mount INOX with copper grease.
+!!! warning "Remark"
+    Always mount INOX with copper grease.
 
 **Internal thread**
 
@@ -77,10 +83,10 @@ Fasteners material: electrolytic galvanizing (ELVZ) or INOX A2\*
 
 \*Use 2 regular nuts because there is no tension for spring washers.
 
-!!! warning "Remark"
+!!! danger "Remark"
     When the machine is INOX and the structure is galvanized:
 
-    → Use HDGA bolts but place PA washers (DIN9021) in between, plus a Fiber Klingersil C4324 2 mm sheet between machine and structure (see [Mounting machine(parts) on structures](Mounting-machine-parts-on-structures.md)).
+    → Use HDGA bolts but place PA washers (DIN9021) in between + Fiber Klingersil C4324 2 mm sheet between machine and structure (see [Mounting machine(parts) on structures](Mounting-machine-parts-on-structures.md)).
 
     ![INOX bolt stack with Fiber Klingersil sheet](../assets/design-playbook/bolt-connections/image56.png){ width="140" .center }
 
@@ -88,16 +94,28 @@ Fasteners material: electrolytic galvanizing (ELVZ) or INOX A2\*
 
 The clamp length is the total thickness of the parts being bolted together. Add to it the value below for the chosen size and locking method to get the required bolt length.
 
-| Size | with locknut | with springwasher |
-| --- | --- | --- |
-| M8 | 15 | 16 |
-| M10 | 18.5 | 20 |
-| M12 | 22.5 | 25 |
-| M16 | 28 | 30 |
-| M20 | 33.5 | 36 |
-| M24 | 40 | 44 |
+<div class="diagram-table">
 
-\* Remark: try to limit the additional thread to the minimal.
+<table>
+<tr><th colspan="4">Required bolt length</th></tr>
+<tr><th>Size</th><th>Clamp length +</th><th>with locknut</th><th>With springwasher</th></tr>
+<tr>
+<td></td>
+<td><img src="../../assets/design-playbook/bolt-connections/image_table1.png" alt="Clamp length diagram" width="150"></td>
+<td><img src="../../assets/design-playbook/bolt-connections/image_table2.png" alt="Clamp length diagram" width="150"></td>
+<td><img src="../../assets/design-playbook/bolt-connections/image_table3.png" alt="Clamp length diagram" width="225"></td>
+</tr>
+<tr><td>M8</td><td></td><td>15</td><td>16</td></tr>
+<tr><td>M10</td><td></td><td>18.5</td><td>20</td></tr>
+<tr><td>M12</td><td></td><td>22.5</td><td>25</td></tr>
+<tr><td>M16</td><td></td><td>28</td><td>30</td></tr>
+<tr><td>M20</td><td></td><td>33.5</td><td>36</td></tr>
+<tr><td>M24</td><td></td><td>40</td><td>44</td></tr>
+</table>
+
+</div>
+
+\* Remark: try to limit the additional thread to the minimal (5 mm).
 
 !!! tip "Basic rule to approach required bolt length"
     → Clamp length + diameter x 2

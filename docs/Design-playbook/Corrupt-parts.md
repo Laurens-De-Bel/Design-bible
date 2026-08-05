@@ -139,9 +139,9 @@ All parts designed in modelling have a standard resolution of 1.0E-5 mm. If the 
 
         When using the 'Grow Surface' tool, simply select the part. The edges where the face is missing will be indicated in orange.
 
-    ![Face part successfully turned into a solid](../assets/design-playbook/corrupt-parts/image44.png){ .center }
+        ![Face part successfully turned into a solid](../assets/design-playbook/corrupt-parts/image44.png){ .center }
 
-    If it succeeds, the part will change into a solid instead of a face part.
+        If it succeeds, the part will change into a solid instead of a face part.
 
 - **Part corruption too complex to solve**
 
