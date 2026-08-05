@@ -5,8 +5,8 @@ plugins:
 extra_css:
   - stylesheets/extra.css
 
-site_name: Engineering bible
-site_url: https://adrem-engineering-bible.com
+site_name: Engineering playbook
+site_url: https://adrem-engineering-playbook.com
 
 theme:
   name: material
@@ -99,13 +99,13 @@ extra:
 copyright: ©2026 Ad Rem
 
 nav:
-  - Design bible:
-    - Design-bible/index.md 
-    - Design-bible/Admonitions.md
+  - Design playbook:
+    - Design-playbook/index.md
+    - Design-playbook/Admonitions.md
     - Diagram examples:
-      - Design-bible/Test submap/index.md
-      - Design-bible/Test submap/test1.md
-      - Design-bible/Test submap/test2.md
+      - Design-playbook/Test submap/index.md
+      - Design-playbook/Test submap/test1.md
+      - Design-playbook/Test submap/test2.md
   - Calculators:
     - Calculators/index.md
     - Calculators/Content-tabs-with-code.md
