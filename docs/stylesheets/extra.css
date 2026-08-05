@@ -57,6 +57,25 @@ body:has(.ar-hero) .md-tabs {
   }
 }
 
+/* Auto-number each top-level section's page list in the sidebar nav
+   (Design playbook, Calculators, Standards, ...) - e.g. "1. Guidelines
+   & structure", "2. Corrupt parts...". Purely CSS-driven off document
+   order, so adding, removing or reordering chapters in mkdocs.yml's
+   nav never requires manually renumbering anything, and the page's own
+   title/heading and the top tab label stay unnumbered. */
+.md-nav[data-md-level="1"] > .md-nav__list {
+  counter-reset: md-nav-chapter;
+}
+
+.md-nav[data-md-level="1"] > .md-nav__list > .md-nav__item {
+  counter-increment: md-nav-chapter;
+}
+
+.md-nav[data-md-level="1"] > .md-nav__list > .md-nav__item > .md-nav__link .md-ellipsis::before,
+.md-nav[data-md-level="1"] > .md-nav__list > .md-nav__item > .md-nav__container .md-ellipsis::before {
+  content: counter(md-nav-chapter) ". ";
+}
+
 /* Homepage hero + section cards */
 .ar-home {
   display: flex;
