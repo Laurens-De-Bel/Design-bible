@@ -9,10 +9,10 @@
 
 **Example**
 
-![Structure column with connection detail insets](../assets/design-playbook/structure-and-platform-information/image66.png)
-![Connection detail - top inset](../assets/design-playbook/structure-and-platform-information/image67.png)
-![Connection detail - bottom inset](../assets/design-playbook/structure-and-platform-information/image68.png)
-![Column base plate with 50mm distance from the side wall](../assets/design-playbook/structure-and-platform-information/image69.png){ width="300" }
+![Structure column with connection detail insets](../assets/design-playbook/structure-and-platform-information/image66.png){ .center }
+![Connection detail - top inset](../assets/design-playbook/structure-and-platform-information/image67.png){ .center }
+![Connection detail - bottom inset](../assets/design-playbook/structure-and-platform-information/image68.png){ .center }
+![Column base plate with 50mm distance from the side wall](../assets/design-playbook/structure-and-platform-information/image69.png){ width="300" .center }
 
 !!! warning "Remark"
     Don't use vertical slots with horizontal beams, to prevent sliding down.
@@ -23,13 +23,13 @@
 
 **M16:** Reinforcements on structure build
 
-![Structure frame using M20 general build and M16 reinforcements](../assets/design-playbook/structure-and-platform-information/image70.png)
+![Structure frame using M20 general build and M16 reinforcements](../assets/design-playbook/structure-and-platform-information/image70.png){ .center }
 
-![Reinforcement detail using M16 fasteners](../assets/design-playbook/structure-and-platform-information/image71.png)
+![Reinforcement detail using M16 fasteners](../assets/design-playbook/structure-and-platform-information/image71.png){ .center }
 
 **M16:** Machines or attachment to structure
 
-![Machine attachment to structure using M16 fasteners](../assets/design-playbook/structure-and-platform-information/image72.png)
+![Machine attachment to structure using M16 fasteners](../assets/design-playbook/structure-and-platform-information/image72.png){ .center }
 
 ## ID numbering in WA en parts
 
@@ -42,16 +42,16 @@ If possible, start the sequence numbers as how to build up.
 
 The Excel list must be used by the supplier to weld the ID number on the parts.
 
-![Excel list used by the supplier for ID numbering](../assets/design-playbook/structure-and-platform-information/image73.png)
+![Excel list used by the supplier for ID numbering](../assets/design-playbook/structure-and-platform-information/image73.png){ .center }
 
-![Excel list, continued](../assets/design-playbook/structure-and-platform-information/image74.png)
+![Excel list, continued](../assets/design-playbook/structure-and-platform-information/image74.png){ .center }
 
 ## Profile information
 
 **Allowed tracing dimensions for profiles according to DIN 997**
 
-![Profile cross-section legend for dimension p](../assets/design-playbook/structure-and-platform-information/image75.png){ width="200" }
-![Profile cross-section legend for dimension e](../assets/design-playbook/structure-and-platform-information/image76.png){ width="150" }
+![Profile cross-section legend for dimension p](../assets/design-playbook/structure-and-platform-information/image75.png){ width="200" .center }
+![Profile cross-section legend for dimension e](../assets/design-playbook/structure-and-platform-information/image76.png){ width="150" .center }
 
 | Size | p | Size | e | Size | p |
 | --- | --- | --- | --- | --- | --- |
@@ -105,7 +105,7 @@ The Excel list must be used by the supplier to weld the ID number on the parts.
 
 **Bolt connection** — Fasteners material: Hot dip galvanized
 
-![Chemical anchor threaded rod assembly](../assets/design-playbook/structure-and-platform-information/image77.png){ width="180" }
+![Chemical anchor threaded rod assembly](../assets/design-playbook/structure-and-platform-information/image77.png){ width="180" .center }
 
 Above the mount plate:
 
@@ -133,12 +133,12 @@ Underneath the mount plate:
 **Hole positioning**
 
 === "General conditions"
-    ![General conditions - minimum 75mm](../assets/design-playbook/structure-and-platform-information/image78.png){ width="260" }
+    ![General conditions - minimum 75mm](../assets/design-playbook/structure-and-platform-information/image78.png){ width="260" .center }
 
     MIN. 75mm
 
 === "With obstacles in 1m range above the mount plate"
-    ![With obstacles in 1m range - minimum 75mm in horizontal direction](../assets/design-playbook/structure-and-platform-information/image79.png){ width="260" }
+    ![With obstacles in 1m range - minimum 75mm in horizontal direction](../assets/design-playbook/structure-and-platform-information/image79.png){ width="260" .center }
 
     MIN. 75mm in horizontal direction
 
@@ -152,7 +152,7 @@ Standard application inside a building: **50mm**
 
 **Types:**
 
-![Mechanical expansion anchor](../assets/design-playbook/structure-and-platform-information/image81.jpeg){ width="150" }
+![Mechanical expansion anchor](../assets/design-playbook/structure-and-platform-information/image81.jpeg){ width="150" .center }
 
 | Size | Reference |
 | --- | --- |
@@ -166,4 +166,4 @@ Hole dimensions according to the [Hole / slot dimensions](Hole-slot-dimensions.m
 
 Place the conical stopper at a distance center to center of **60mm** (on new model from 2024). This prevents opening of the door by itself. This will create a slight overlap in the CAD file.
 
-![Boplan conical stopper placement](../assets/design-playbook/structure-and-platform-information/image82.png)
+![Boplan conical stopper placement](../assets/design-playbook/structure-and-platform-information/image82.png){ .center }

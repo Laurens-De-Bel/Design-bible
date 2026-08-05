@@ -12,6 +12,29 @@
   color: var(--md-default-fg-color--light);
 }
 
+/* Apply with ![alt](path){ .center } to center a figure; remove the
+   class on individual images that should stay left-aligned instead
+   (e.g. small inline icons next to text). */
+.center {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Wrap two or more images in <div class="image-row">...</div> (plain
+   HTML <img> tags, not markdown syntax) to lay them out side by side,
+   left-to-right in source order, centered as a group. */
+.image-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.image-row img {
+  max-width: 100%;
+}
+
 /* Hide the tabs row only on the homepage. Done in CSS (keyed off the
    hero markup that instant-navigation swaps in with the page content)
    rather than by omitting the tabs from the page's HTML, because the

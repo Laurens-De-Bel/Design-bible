@@ -33,11 +33,11 @@ In the P&ID, the installation is divided into zones. This is the first level of 
 
 From this example of P&ID:
 
-![Example P&ID divided into zones](../assets/design-playbook/guidelines-and-structure/image02.png)
+![Example P&ID divided into zones](../assets/design-playbook/guidelines-and-structure/image02.png){ .center }
 
-Structure CEDM is:
+The structure in CEDM becomes:
 
-![CEDM structure tree matching the P&ID zones](../assets/design-playbook/guidelines-and-structure/image03.png)
+![CEDM structure tree matching the P&ID zones](../assets/design-playbook/guidelines-and-structure/image03.png){ .center }
 
 In detail:
 
@@ -56,16 +56,16 @@ In detail:
     - 05 PUMPS AND PIPING and 06 Electrical Devices are general topics
     - **The names of the zones are the ones from the P&ID!**
 
-!!! note
-    All assemblies for zones and general topics have to be toggled Gathering Parts.
+!!! info "Note"
+    All assemblies for zones and general topics have to be toggled Gathering Parts (Orange marking in structure tree).
 
 ### Machines and components
 
 In each zone, the structure follows the flow of the material. In case of a split of the flow, we first follow the heavy fraction (sinking in a separation bath) and then the light one (floating).
 
-![Material flow structure within a zone](../assets/design-playbook/guidelines-and-structure/image04.png)
+![Material flow structure within a zone](../assets/design-playbook/guidelines-and-structure/image04.png){ .center }
 
-![Structure tree window for a zone](../assets/design-playbook/guidelines-and-structure/image05.png)
+![Structure tree window for a zone](../assets/design-playbook/guidelines-and-structure/image05.png){ .center }
 
 The general rule for naming is: `AAA BBB – CCC - AGYY-00X-ZZ`
 
@@ -76,25 +76,23 @@ The general rule for naming is: `AAA BBB – CCC - AGYY-00X-ZZ`
 - CCC: is the machine name — `diverter valve`
 - AGYY-00X-ZZ: is the subcode under which the part will be ordered — `AG23-00X-03`
 
-!!! note
+!!! info "Note"
     All assemblies for machines can't be toggled Gathering Parts.
 
 The machine codes are defined in the P&ID and in the machines' list.
 
 It is possible to group machines together under 1 assembly:
 
-![Grouped machines under one assembly](../assets/design-playbook/guidelines-and-structure/image06.png)
+![Grouped machines under one assembly](../assets/design-playbook/guidelines-and-structure/image06.png){ .center }
 
 In this case, the assembly that groups the machines is toggled gathering part and the name doesn't contain any subproject code.
 
 The name of the assemblies for machines includes the related subproject codes and can't be toggled gathering parts.
 
-!!! note
+!!! info "Note"
     Keep in mind that only the assemblies including a subproject code will be set in AXAPTA. That means, for example, that grouping 2 machines with the same subproject code is a nonsense.
 
 ### Structure of a machine
-
-![Structure tree of a machine](../assets/design-playbook/guidelines-and-structure/image07.png)
 
 A machine must contain all the parts needed to load separately as a whole. For example, the wash drum assembly must contain the following:
 
@@ -108,9 +106,11 @@ A machine must contain all the parts needed to load separately as a whole. For e
     - the funnels
     - ...
 
+![Structure tree of a machine](../assets/design-playbook/guidelines-and-structure/image07.png){ .center }
+
 The structure of a machine is built up as follows:
 
-1. The top assembly is as described above and is marked as Gathering Part. If there are parts that need to be ordered in another sub-project, the name of the top assembly is without an AG code. The assemblies that need to be ordered in another sub project have, at the end of their name, the subproject code. These assemblies must be used to explode in AX to retrieve the needs.
+1. The top assembly is as described above and is marked as Gathering Part. If there are parts that need to be ordered in another subproject, the name of the top assembly is without an AG code. The assemblies that need to be ordered in another subproject have, at the end of their name, the subproject code. These assemblies must be used to explode in AX to retrieve the needs.
 2. All other assemblies will have the following name `CC_DDD`:
     - CC is:
         - FA = functional assembly
@@ -121,12 +121,14 @@ The structure of a machine is built up as follows:
 
 **Example 1:**
 
-![Example 1 - bolt assembly nested in a functional assembly](../assets/design-playbook/guidelines-and-structure/image08.png)
+![Example 1 - bolt assembly nested in a functional assembly](../assets/design-playbook/guidelines-and-structure/image08.png){ .center }
 
 **Example 2:**
 
-![Example 2 - bolt assembly nested in a functional assembly](../assets/design-playbook/guidelines-and-structure/image09.png)
+![Example 2 - bolt assembly nested in a functional assembly](../assets/design-playbook/guidelines-and-structure/image09.png){ .center }
 
 ### Spare parts
 
-When a third party component is used in the project, the spare parts for the component should be added in the assembly. The spare parts need to be placed in a container with the name "SPARE_PARTS" which is set to no scan.
+When a third party component is used in the project, the spare parts for the component should be added in the assembly. The spare parts need to be placed in a container with the name "SPARE_PARTS" which is set to no scan (green marking in structure tree).
+
+![Example of no scan spare parts container](../assets/design-playbook/guidelines-and-structure/image_extra.png){ .center }

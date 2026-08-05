@@ -13,7 +13,7 @@
 
 Fasteners material: Hot dip Galvanized (HDGA)
 
-![Bolt, washer and nut stack](../assets/design-playbook/bolt-connections/image57.png){ width="140" }
+![Bolt, washer and nut stack](../assets/design-playbook/bolt-connections/image57.png){ width="140" .center }
 
 | Component | Standard / norm |
 | --- | --- |
@@ -26,7 +26,7 @@ Fasteners material: Hot dip Galvanized (HDGA)
 
 Fasteners material: Hot dip Galvanized (HDGA)
 
-![Bolt, washer and nut stack per EN 1090-2](../assets/design-playbook/bolt-connections/image58.png){ width="140" }
+![Bolt, washer and nut stack per EN 1090-2](../assets/design-playbook/bolt-connections/image58.png){ width="140" .center }
 
 | Component | Standard / norm |
 | --- | --- |
@@ -39,10 +39,10 @@ Fasteners material: Hot dip Galvanized (HDGA)
 Fasteners material: electrolytic galvanizing (ELVZ) or INOX A2\*
 
 === "Hole"
-    ![Bolt through a hole](../assets/design-playbook/bolt-connections/image59.png){ width="140" }
+    ![Bolt through a hole](../assets/design-playbook/bolt-connections/image59.png){ width="140" .center }
 
 === "Slot"
-    ![Bolt through a slot](../assets/design-playbook/bolt-connections/image60.png){ width="140" }
+    ![Bolt through a slot](../assets/design-playbook/bolt-connections/image60.png){ width="140" .center }
 
 | Component | Standard / norm |
 | --- | --- |
@@ -55,7 +55,7 @@ Fasteners material: electrolytic galvanizing (ELVZ) or INOX A2\*
 
 **Internal thread**
 
-![Bolt into an internal thread](../assets/design-playbook/bolt-connections/image61.png){ width="140" }
+![Bolt into an internal thread](../assets/design-playbook/bolt-connections/image61.png){ width="140" .center }
 
 | Component | Standard / norm |
 | --- | --- |
@@ -67,7 +67,7 @@ Fasteners material: electrolytic galvanizing (ELVZ) or INOX A2\*
 
 **Positioning bolts**
 
-![Threaded rod used as a positioning bolt](../assets/design-playbook/bolt-connections/image62.png){ width="140" }
+![Threaded rod used as a positioning bolt](../assets/design-playbook/bolt-connections/image62.png){ width="140" .center }
 
 | Component | Standard / norm |
 | --- | --- |
@@ -82,7 +82,7 @@ Fasteners material: electrolytic galvanizing (ELVZ) or INOX A2\*
 
     → Use HDGA bolts but place PA washers (DIN9021) in between, plus a Fiber Klingersil C4324 2 mm sheet between machine and structure (see [Mounting machine(parts) on structures](Mounting-machine-parts-on-structures.md)).
 
-    ![INOX bolt stack with Fiber Klingersil sheet](../assets/design-playbook/bolt-connections/image56.png){ width="140" }
+    ![INOX bolt stack with Fiber Klingersil sheet](../assets/design-playbook/bolt-connections/image56.png){ width="140" .center }
 
 ## Choice of correct bolt length
 

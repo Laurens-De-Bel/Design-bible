@@ -4,7 +4,7 @@
 
 In the configurator, geared motors of Siemens specify the voltages as follows:
 
-![Siemens configurator - Netspanning (mains voltage) selection](../assets/design-playbook/geared-motors-siemens/image140.png)
+![Siemens configurator - Netspanning (mains voltage) selection](../assets/design-playbook/geared-motors-siemens/image140.png){ .center }
 
 - Select **(1)** standard (P80) tolerance on voltage +/- 10%
 - Motors up to and including 7.5 kW: select **(2)** 260/400 V
@@ -13,4 +13,4 @@ In the configurator, geared motors of Siemens specify the voltages as follows:
 
 ## Siemens Mall: how to select file type SAT
 
-![Siemens configurator - selecting file type SAT](../assets/design-playbook/geared-motors-siemens/image141.png){ width="350" }
+![Siemens configurator - selecting file type SAT](../assets/design-playbook/geared-motors-siemens/image141.png){ width="350" .center }

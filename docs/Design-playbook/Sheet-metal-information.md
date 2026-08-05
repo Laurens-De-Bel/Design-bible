@@ -9,7 +9,7 @@ We take the k-factor equal to in sheet metal to unfold plates: *(determined in 2
 - *conical plates: k=1*
 - *cylindrical plates: k=0.5*
 
-![K-factor reference](../assets/design-playbook/sheet-metal-information/image86.png){ width="250" }
+![K-factor reference](../assets/design-playbook/sheet-metal-information/image86.png){ width="250" .center }
 
 **Bending radius** *(shared by Cretes '2014')*
 
@@ -53,4 +53,4 @@ We take the k-factor equal to in sheet metal to unfold plates: *(determined in 2
 | 20 | 4.5 | 12 | **90** |
 | >20 | 4.5 | 12 | |
 
-![HARDOX 400 bend radius reference diagram](../assets/design-playbook/sheet-metal-information/image87.png){ width="320" }
+![HARDOX 400 bend radius reference diagram](../assets/design-playbook/sheet-metal-information/image87.png){ width="320" .center }
