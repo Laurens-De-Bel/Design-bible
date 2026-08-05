@@ -42,19 +42,19 @@ Structure CEDM is:
 In detail:
 
 - The main assembly name is composed of the project code "AGYY-00X" followed by "-00".
-  - YY is the 2 last digits of the year of creation of the project;
-  - "X" is an iterative number;
-  - The project code is defined by AXAPTA.
+    - YY is the 2 last digits of the year of creation of the project;
+    - "X" is an iterative number;
+    - The project code is defined by AXAPTA.
 - 00_Customer scope: this assembly groups all existing, or to be built, constructions on the project area at customer's site. As examples:
-  - Building, concrete boxes, ...
-  - Electricity, water, compressed air connections, ...
-  - Machines that are not in ADREM's scope
-  - Bins, containers, consumables and any other utilities required by the installation
+    - Building, concrete boxes, ...
+    - Electricity, water, compressed air connections, ...
+    - Machines that are not in ADREM's scope
+    - Bins, containers, consumables and any other utilities required by the installation
 - All zones, organized following the process of material, then other processes and finally general topics:
-  - 01 F2 FEEDING until 03 S5-SEPARATOR 0.87 is the process of material
-  - 04 M2 MEDIUM TREATMENT is a separate process
-  - 05 PUMPS AND PIPING and 06 Electrical Devices are general topics
-  - **The names of the zones are the ones from the P&ID!**
+    - 01 F2 FEEDING until 03 S5-SEPARATOR 0.87 is the process of material
+    - 04 M2 MEDIUM TREATMENT is a separate process
+    - 05 PUMPS AND PIPING and 06 Electrical Devices are general topics
+    - **The names of the zones are the ones from the P&ID!**
 
 !!! note
     All assemblies for zones and general topics have to be toggled Gathering Parts.
@@ -102,21 +102,21 @@ A machine must contain all the parts needed to load separately as a whole. For e
 - the platforms
 - the safety grids
 - the parts themselves:
-  - the drum
-  - the drive
-  - the injector
-  - the funnels
-  - ...
+    - the drum
+    - the drive
+    - the injector
+    - the funnels
+    - ...
 
 The structure of a machine is built up as follows:
 
 1. The top assembly is as described above and is marked as Gathering Part. If there are parts that need to be ordered in another sub-project, the name of the top assembly is without an AG code. The assemblies that need to be ordered in another sub project have, at the end of their name, the subproject code. These assemblies must be used to explode in AX to retrieve the needs.
 2. All other assemblies will have the following name `CC_DDD`:
-   - CC is:
-     - FA = functional assembly
-     - WA = weld assembly
-     - BA = bolt assembly
-   - DDD is the name of the part
+    - CC is:
+        - FA = functional assembly
+        - WA = weld assembly
+        - BA = bolt assembly
+    - DDD is the name of the part
 3. Bolts in the machine structure: each part or assembly that is mounted in a Bolt Assembly (BA) should be put in a Functional Assembly (FA) together with the fasteners needed to submount the part or assembly. The FA is marked as Gathering Part.
 
 **Example 1:**
