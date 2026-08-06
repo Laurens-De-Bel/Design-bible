@@ -33,7 +33,7 @@ In each WA or Part we need an ID number welded on it. The ID is made up of three
 
 If possible, start the sequence numbers in order of how to build the structure.
 
-The ID's are stored in an Excel called the global numbering file. An example can be found here: W:\RenD\Projecten 2026\AG26-001 - UDOM - Integration additional equipment\02-Supplier_info\AG26-001-10 - Structures\AG26-001-GLOBAL-Numbering-File.xlsx
+The ID's are stored in an Excel called the global numbering file. An example can be found here: `W:\RenD\Projecten 2026\AG26-001 - UDOM - Integration additional equipment\02-Supplier_info\AG26-001-10 - Structures\AG26-001-GLOBAL-Numbering-File.xlsx`
 
 The global numbering file must be used by the supplier to weld the ID number on the parts.
 
@@ -41,58 +41,74 @@ The global numbering file must be used by the supplier to weld the ID number on 
 
 ![Excel list, continued](../assets/design-playbook/structure-and-platform-information/image74.png){ .center }
 
+The ID's should also be noted on the 2D drawing of the bolt assembly (BA).
+
+![ID's on BA drawing](../assets/design-playbook/structure-and-platform-information/image74.1.png){ .center }
+
 ## Profile information
 
 **Allowed tracing dimensions for profiles according to DIN 997**
 
-![Profile cross-section legend for dimension p](../assets/design-playbook/structure-and-platform-information/image75.png){ width="200" .center }
-![Profile cross-section legend for dimension e](../assets/design-playbook/structure-and-platform-information/image76.png){ width="150" .center }
+<div class="image-row" style="gap: 7rem;">
+  <img src="../../assets/design-playbook/structure-and-platform-information/image75.png" alt="Profile cross-section legend for dimension p" width="126" height="220">
+  <img src="../../assets/design-playbook/structure-and-platform-information/image76.png" alt="Profile cross-section legend for dimension e" width="77" height="220">
+</div>
 
-| Size | p | Size | e | Size | p |
-| --- | --- | --- | --- | --- | --- |
-| IPN 80 | - | UPN 80 | 27 | IPE 80 | - |
-| IPN 100 | - | UPN 100 | 30 | IPE 100 | - |
-| IPN 120 | - | UPN 120 | 35 | IPE 120 | - |
-| IPN 140 | - | UPN 140 | 35 | IPE 140 | - |
-| IPN 160 | - | UPN 160 | 40 | IPE 160 | - |
-| IPN 180 | - | UPN 180 | 40 | IPE 180 | 55 |
-| IPN 200 | - | UPN 200 | 45 | IPE 200 | 60 |
-| IPN 220 | 58 | UPN 220 | 45 | IPE 220 | 70 |
-| IPN 240 | 66 | UPN 240 | 50 | IPE 240 | 80 |
-| IPN 260 | 73 | UPN 260 | 50 | IPE 270 | 85 |
-| IPN 280 | 79 | UPN 280 | 55 | IPE 300 | 90 |
-| IPN 300 | 85 | UPN 300 | 60 | IPE 330 | 100 |
-| | | UPN 320 | 60 | IPE 360 | 100 |
-| | | UPN 350 | 60 | IPE 400 | 110 |
-| | | UPN 380 | 60 | IPE 450 | 110 |
-| | | UPN 400 | 60 | IPE 500 | 110 |
-| | | | | IPE 550 | 120 |
-| | | | | IPE 600 | 130 |
+<div class="compact-table">
 
-| Size | p | Size | p | Size | p |
-| --- | --- | --- | --- | --- | --- |
-| HEA 100 | 60 | HEB 100 | 60 | HEM 100 | 70 |
-| HEA 120 | 70 | HEB 120 | 70 | HEM 120 | 80 |
-| HEA 140 | 80 | HEB 140 | 80 | HEM 140 | 80 |
-| HEA 160 | 90 | HEB 160 | 90 | HEM 160 | 90 |
-| HEA 180 | 100 | HEB 180 | 100 | HEM 180 | 100 |
-| HEA 200 | 110 | HEB 200 | 110 | HEM 200 | 110 |
-| HEA 220 | 130 | HEB 220 | 130 | HEM 220 | 130 |
-| HEA 240 | 150 | HEB 240 | 150 | HEM 240 | 150 |
-| HEA 260 | 170 | HEB 260 | 170 | HEM 260 | 170 |
-| HEA 280 | 190 | HEB 280 | 190 | HEM 280 | 190 |
-| HEA 300 | 210 | HEB 300 | 210 | HEM 300 | 210 |
-| HEA 320 | 210 | HEB 320 | 210 | HEM 320 | 210 |
-| HEA 340 | 210 | HEB 340 | 210 | HEM 340 | 210 |
-| HEA 360 | 210 | HEB 360 | 210 | HEM 360 | 210 |
-| HEA 400 | 210 | HEB 400 | 210 | HEM 400 | 210 |
-| HEA 450 | 210 | HEB 450 | 210 | HEM 450 | 210 |
-| HEA 500 | 210 | HEB 500 | 210 | HEM 500 | 210 |
-| HEA 550 | 210 | HEB 550 | 210 | HEM 550 | 210 |
-| HEA 600 | 210 | HEB 600 | 210 | HEM 600 | 210 |
-| HEA 650 | 210 | HEB 650 | 210 | HEM 650 | 210 |
-| HEA 700 | 210 | HEB 700 | 210 | HEM 700 | 210 |
-| HEA 800 | 210 | HEB 800 | 210 | HEM 800 | 210 |
+<table>
+<tr><th>Size</th><th>p</th><th>Size</th><th>e</th><th>Size</th><th>p</th></tr>
+<tr><td>IPN 80</td><td>-</td><td>UPN 80</td><td>27</td><td>IPE 80</td><td>-</td></tr>
+<tr><td>IPN 100</td><td>-</td><td>UPN 100</td><td>30</td><td>IPE 100</td><td>-</td></tr>
+<tr><td>IPN 120</td><td>-</td><td>UPN 120</td><td>35</td><td>IPE 120</td><td>-</td></tr>
+<tr><td>IPN 140</td><td>-</td><td>UPN 140</td><td>35</td><td>IPE 140</td><td>-</td></tr>
+<tr><td>IPN 160</td><td>-</td><td>UPN 160</td><td>40</td><td>IPE 160</td><td>-</td></tr>
+<tr><td>IPN 180</td><td>-</td><td>UPN 180</td><td>40</td><td>IPE 180</td><td>55</td></tr>
+<tr><td>IPN 200</td><td>-</td><td>UPN 200</td><td>45</td><td>IPE 200</td><td>60</td></tr>
+<tr><td>IPN 220</td><td>58</td><td>UPN 220</td><td>45</td><td>IPE 220</td><td>70</td></tr>
+<tr><td>IPN 240</td><td>66</td><td>UPN 240</td><td>50</td><td>IPE 240</td><td>80</td></tr>
+<tr><td>IPN 260</td><td>73</td><td>UPN 260</td><td>50</td><td>IPE 270</td><td>85</td></tr>
+<tr><td>IPN 280</td><td>79</td><td>UPN 280</td><td>55</td><td>IPE 300</td><td>90</td></tr>
+<tr><td>IPN 300</td><td>85</td><td>UPN 300</td><td>60</td><td>IPE 330</td><td>100</td></tr>
+<tr><td></td><td></td><td>UPN 320</td><td>60</td><td>IPE 360</td><td>100</td></tr>
+<tr><td></td><td></td><td>UPN 350</td><td>60</td><td>IPE 400</td><td>110</td></tr>
+<tr><td></td><td></td><td>UPN 380</td><td>60</td><td>IPE 450</td><td>110</td></tr>
+<tr><td></td><td></td><td>UPN 400</td><td>60</td><td>IPE 500</td><td>110</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>IPE 550</td><td>120</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>IPE 600</td><td>130</td></tr>
+</table>
+
+</div>
+
+<div class="compact-table">
+
+<table>
+<tr><th>Size</th><th>p</th><th>Size</th><th>p</th><th>Size</th><th>p</th></tr>
+<tr><td>HEA 100</td><td>60</td><td>HEB 100</td><td>60</td><td>HEM 100</td><td>70</td></tr>
+<tr><td>HEA 120</td><td>70</td><td>HEB 120</td><td>70</td><td>HEM 120</td><td>80</td></tr>
+<tr><td>HEA 140</td><td>80</td><td>HEB 140</td><td>80</td><td>HEM 140</td><td>80</td></tr>
+<tr><td>HEA 160</td><td>90</td><td>HEB 160</td><td>90</td><td>HEM 160</td><td>90</td></tr>
+<tr><td>HEA 180</td><td>100</td><td>HEB 180</td><td>100</td><td>HEM 180</td><td>100</td></tr>
+<tr><td>HEA 200</td><td>110</td><td>HEB 200</td><td>110</td><td>HEM 200</td><td>110</td></tr>
+<tr><td>HEA 220</td><td>130</td><td>HEB 220</td><td>130</td><td>HEM 220</td><td>130</td></tr>
+<tr><td>HEA 240</td><td>150</td><td>HEB 240</td><td>150</td><td>HEM 240</td><td>150</td></tr>
+<tr><td>HEA 260</td><td>170</td><td>HEB 260</td><td>170</td><td>HEM 260</td><td>170</td></tr>
+<tr><td>HEA 280</td><td>190</td><td>HEB 280</td><td>190</td><td>HEM 280</td><td>190</td></tr>
+<tr><td>HEA 300</td><td>210</td><td>HEB 300</td><td>210</td><td>HEM 300</td><td>210</td></tr>
+<tr><td>HEA 320</td><td>210</td><td>HEB 320</td><td>210</td><td>HEM 320</td><td>210</td></tr>
+<tr><td>HEA 340</td><td>210</td><td>HEB 340</td><td>210</td><td>HEM 340</td><td>210</td></tr>
+<tr><td>HEA 360</td><td>210</td><td>HEB 360</td><td>210</td><td>HEM 360</td><td>210</td></tr>
+<tr><td>HEA 400</td><td>210</td><td>HEB 400</td><td>210</td><td>HEM 400</td><td>210</td></tr>
+<tr><td>HEA 450</td><td>210</td><td>HEB 450</td><td>210</td><td>HEM 450</td><td>210</td></tr>
+<tr><td>HEA 500</td><td>210</td><td>HEB 500</td><td>210</td><td>HEM 500</td><td>210</td></tr>
+<tr><td>HEA 550</td><td>210</td><td>HEB 550</td><td>210</td><td>HEM 550</td><td>210</td></tr>
+<tr><td>HEA 600</td><td>210</td><td>HEB 600</td><td>210</td><td>HEM 600</td><td>210</td></tr>
+<tr><td>HEA 650</td><td>210</td><td>HEB 650</td><td>210</td><td>HEM 650</td><td>210</td></tr>
+<tr><td>HEA 700</td><td>210</td><td>HEB 700</td><td>210</td><td>HEM 700</td><td>210</td></tr>
+<tr><td>HEA 800</td><td>210</td><td>HEB 800</td><td>210</td><td>HEM 800</td><td>210</td></tr>
+</table>
+
+</div>
 
 ## Chemical anchor information
 
@@ -130,16 +146,16 @@ Underneath the mount plate:
 === "General conditions"
     ![General conditions - minimum 75mm](../assets/design-playbook/structure-and-platform-information/image78.png){ width="260" .center }
 
-    MIN. 75mm
 
 === "With obstacles in 1m range above the mount plate"
     ![With obstacles in 1m range - minimum 75mm in horizontal direction](../assets/design-playbook/structure-and-platform-information/image79.png){ width="260" .center }
 
-    MIN. 75mm in horizontal direction
 
 **Mount position**
 
-Standard application inside a building: **50mm**
+![Heigth footplate mechanical anchoring](../assets/design-playbook/structure-and-platform-information/image80.png){ width="300" .center }
+
+For standard applications inside a building, the floorplate should be at a height of **50mm**.
 
 ## Mechanical anchor information
 
@@ -147,7 +163,7 @@ Standard application inside a building: **50mm**
 
 **Types:**
 
-![Mechanical expansion anchor](../assets/design-playbook/structure-and-platform-information/image81.jpeg){ width="150" .center }
+![Mechanical expansion anchor](../assets/design-playbook/structure-and-platform-information/image81.jpeg){ width="200" .center }
 
 | Size | Reference |
 | --- | --- |
@@ -161,4 +177,4 @@ Hole dimensions according to the [Hole / slot dimensions](Hole-slot-dimensions.m
 
 Place the conical stopper at a distance center to center of **60mm** (on new model from 2024). This prevents opening of the door by itself. This will create a slight overlap in the CAD file.
 
-![Boplan conical stopper placement](../assets/design-playbook/structure-and-platform-information/image82.png){ .center }
+![Boplan conical stopper placement](../assets/design-playbook/structure-and-platform-information/image82.png){ width="500" .center }

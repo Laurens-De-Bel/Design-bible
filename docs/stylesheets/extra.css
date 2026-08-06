@@ -120,6 +120,15 @@ body:has(.ar-hero) .md-tabs {
   font-size: 1rem;
 }
 
+/* Wrap a long reference table in <div class="compact-table">...</div>
+   to shrink the vertical cell padding - useful for long lookup tables
+   (many short rows) where Material's default row padding adds up to a
+   lot of scrolling. Adjust the padding value to taste. */
+.compact-table table:not([class]) td,
+.compact-table table:not([class]) th {
+  padding: 0.3em 1.25em;
+}
+
 /* Empty slot for an image that hasn't been added yet - swap the
    surrounding <div class="img-placeholder">...</div> for a normal
    <img> tag once the real figure is available. */

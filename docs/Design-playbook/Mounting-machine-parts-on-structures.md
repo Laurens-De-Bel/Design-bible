@@ -10,6 +10,6 @@ To separate inox parts from galva parts, use this material instead of rubber: Fi
 
 ![Fiber Klingersil sheet used to separate inox and galva parts](../assets/design-playbook/mounting-machine-parts-on-structures/image84.png){ .center }
 
-Example: art **21706208, Fiberseal_Inputbox**
+Example: `art 21706208, Fiberseal_Inputbox`
 
 ![Fiberseal_Inputbox example part properties](../assets/design-playbook/mounting-machine-parts-on-structures/image85.png){ .center }
