@@ -22,6 +22,7 @@
 .md-search__form {
   border: 1px solid var(--md-primary-fg-color);
   background-color: #f4f2ee;
+  border-radius: 999px;
 }
 
 /* Apply with ![alt](path){ .center } to center a figure; remove the
