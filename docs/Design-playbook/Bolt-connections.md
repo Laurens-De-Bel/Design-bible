@@ -115,7 +115,8 @@ The clamp length is the total thickness of the parts being bolted together. Add 
 
 </div>
 
-\* Remark: try to limit the additional thread to the minimal (5 mm).
+!!! Warning "Remark"
+    Try to limit the additional thread to the minimal (5 mm).
 
-!!! tip "Basic rule to approach required bolt length"
+!!! Note "Basic rule to approach required bolt length"
     → Clamp length + diameter x 2

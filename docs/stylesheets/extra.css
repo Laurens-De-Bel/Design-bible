@@ -9,7 +9,19 @@
 }
 
 .md-header .md-search__input + .md-search__icon {
-  color: var(--md-default-fg-color--light);
+  color: #bdbdbd;
+}
+
+.md-header .md-search__input::placeholder {
+  color: #bdbdbd;
+}
+
+/* Same background as the homepage cards (.ar-card), so the closed
+   search bar matches the site's card color instead of Material's
+   default translucent-black pill. */
+.md-search__form {
+  border: 1px solid var(--md-primary-fg-color);
+  background-color: #f4f2ee;
 }
 
 /* Apply with ![alt](path){ .center } to center a figure; remove the
@@ -97,6 +109,16 @@ body:has(.ar-hero) .md-tabs {
 .md-nav[data-md-level="1"] > .md-nav__list > .md-nav__item > .md-nav__link .md-ellipsis::before,
 .md-nav[data-md-level="1"] > .md-nav__list > .md-nav__item > .md-nav__container .md-ellipsis::before {
   content: counter(md-nav-chapter) ". ";
+}
+
+/* Highlight the current chapter in the sidebar with a colored left
+   border, since Material's default bold+color active state is easy to
+   miss next to the numbering prefix above. Scoped to the level-1 nav
+   (the chapter list itself) so it doesn't also mark the active heading
+   inside the page's own right-hand table of contents. */
+.md-nav[data-md-level="1"] .md-nav__link--active {
+  border-left: 3px solid var(--md-primary-fg-color);
+  padding-left: calc(0.6rem - 3px);
 }
 
 /* Reference-diagram table (e.g. "Choice of correct bolt length"): a
