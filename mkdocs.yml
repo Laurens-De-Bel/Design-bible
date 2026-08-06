@@ -1,4 +1,7 @@
 # Startup: mkdocs serve
+exclude_docs: |
+  __pycache__/
+
 plugins:
   - search
 
@@ -126,6 +129,7 @@ nav:
     - Design-playbook/Norms-on-electrics.md
   - Calculators:
     - Calculators/index.md
+    - Calculators/Info_magnetiet_FeSi.md
     - Calculators/Content-tabs-with-code.md
   - Standards:
     - Standards/index.md
