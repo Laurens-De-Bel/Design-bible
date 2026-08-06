@@ -43,7 +43,7 @@ In detail:
 
 - The main assembly name is composed of the project code "AGYY-00X" followed by "-00".
     - YY is the 2 last digits of the year of creation of the project;
-    - "X" is an iterative number;
+    - "X" is an iterative number; 
     - The project code is defined by AXAPTA.
 - 00_Customer scope: this assembly groups all existing, or to be built, constructions on the project area at customer's site. As examples:
     - Building, concrete boxes, ...
