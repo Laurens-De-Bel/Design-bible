@@ -4,11 +4,14 @@
 
 The norm for welding and allied processes 'EN ISO 2553' has been renewed since 2013, with a small update in 2019.
 
-It's basically a compromise between European and American norms, with some slight differences: European → System A, American → System B.
+It's basically a compromise between European and American norms, with some slight differences:
+
+- European → System A
+- American → System B.
 
 ![European System A vs American System B](../assets/design-playbook/welding/image091.png){ .center }
 
-!!! tip "Rule"
+!!! Success "Rule"
     Always use the welding symbols according to SYSTEM A.
 
 In the title block on our drawings, it is mentioned that we use the European viewset / standard and 'ISO 13920-AE' for general tolerances for welded structures and the geometrical tolerances.
@@ -33,8 +36,10 @@ The elementary symbols are defined by norm ISO 2553 and can't be adapted or modi
 
 **Butt weld** — welding bead < 45°
 
-![Butt weld symbol](../assets/design-playbook/welding/image094.png){ width="280" .center }
-![Butt weld symbol, alternate](../assets/design-playbook/welding/image095.png){ width="200" .center }
+<div class="image-row">
+  <img src="../../assets/design-playbook/welding/image094.png" alt="Butt weld symbol" width="408" height="130">
+  <img src="../../assets/design-playbook/welding/image095.png" alt="Butt weld symbol, alternate" width="205" height="130">
+</div>
 
 A certain depth is burnt into the connected parts.
 
@@ -44,13 +49,17 @@ There are a lot of different butt weld symbols that refer to different joint pre
 
 **Fillet weld** — welding bead from 45° to 90°
 
-![Fillet weld symbol](../assets/design-playbook/welding/image097.png){ width="200" .center }
-![Fillet weld symbol, applied example](../assets/design-playbook/welding/image098.png){ width="320" .center }
+<div class="image-row" style="gap: 5rem;">
+  <img src="../../assets/design-playbook/welding/image097.png" alt="Fillet weld symbol" width="152" height="150">
+  <img src="../../assets/design-playbook/welding/image098.png" alt="Fillet weld symbol, applied example" width="275" height="150">
+</div>
 
 Adding of a certain amount of material on the connected parts — commonly known as corner welds.
 
-![Fillet weld example 1](../assets/design-playbook/welding/image099.png){ width="220" .center }
-![Fillet weld example 2](../assets/design-playbook/welding/image100.png){ width="220" .center }
+<div class="image-row" style="gap: 5rem;">
+  <img src="../../assets/design-playbook/welding/image099.png" alt="Fillet weld example 1" width="188" height="150">
+  <img src="../../assets/design-playbook/welding/image100.png" alt="Fillet weld example 2" width="193" height="150">
+</div>
 
 **Combination of Butt and Fillet**
 
@@ -64,7 +73,7 @@ Where you burn into the connected parts and add a second layer of material on to
 
 Adding of a certain amount of material on the connected parts.
 
-![Edge weld applied example](../assets/design-playbook/welding/image103.png){ width="180" .center }
+![Edge weld applied example](../assets/design-playbook/welding/image103.png){ width="350" .center }
 
 **Flare V weld** — to connect 2 round surfaces
 
@@ -72,12 +81,14 @@ Adding of a certain amount of material on the connected parts.
 
 **Flare bevel** — to connect 1 round surface on a flat one
 
-![Flare bevel weld symbol](../assets/design-playbook/welding/image105.png){ width="180" .center }
-![Flare bevel weld applied example](../assets/design-playbook/welding/image106.png){ width="200" .center }
+<div class="image-row" style="gap: 5rem;">
+  <img src="../../assets/design-playbook/welding/image105.png" alt="Flare bevel weld symbol" width="150" height="150">
+  <img src="../../assets/design-playbook/welding/image106.png" alt="Flare bevel weld applied example" width="169" height="150">
+</div>
 
-To be used to weld a net onto a frame; dimensions of the net have to be clearly identified:
+When used to weld a net onto a frame, the dimensions of the net have to be clearly identified:
 
-![Net welded onto a frame with dimensions specified](../assets/design-playbook/welding/image107.png){ .center }
+![Net welded onto a frame with dimensions specified](../assets/design-playbook/welding/image107.png){ width="700" .center }
 
 **Plug weld** — to fill holes and connect groove / tongue connections
 
@@ -113,36 +124,40 @@ These symbols are used to add info on how to perform the weld, but not on the op
 
 **Weld all-round symbol** — to indicate with a single symbol that the part needs to be welded all the way around, in case the weld type and dimension of the weld remain the same.
 
-![Weld all-round symbol example 1](../assets/design-playbook/welding/image115.png){ width="220" .center }
-![Weld all-round symbol example 2](../assets/design-playbook/welding/image116.png){ width="190" .center }
-![Weld all-round symbol example 3](../assets/design-playbook/welding/image117.png){ width="140" .center }
+<div class="image-row" style="gap: 3rem;">
+  <img src="../../assets/design-playbook/welding/image115.png" alt="Weld all-round symbol example 1" width="254" height="200">
+  <img src="../../assets/design-playbook/welding/image116.png" alt="Weld all-round symbol example 2" width="217" height="200">
+  <img src="../../assets/design-playbook/welding/image117.png" alt="Weld all-round symbol example 3" width="135" height="200">
+</div>
 
-!!! tip "Rule"
+!!! Success "Rule"
     This symbol is also used for circular welding to insist on the fact that the weld has to be continuous and the start & stop points are the same.
 
 ![Weld all-round symbol used for circular welding](../assets/design-playbook/welding/image118.png){ width="220" .center }
 
 **Weld between 2 points** — to indicate a continuous weld along several edges, in all directions, having the exact same characteristics from start to end points.
 
-![Weld between two points example 1](../assets/design-playbook/welding/image119.png){ width="280" .center }
-![Weld between two points example 2](../assets/design-playbook/welding/image120.png){ width="230" .center }
+<div class="image-row" style="gap: 5rem;">
+  <img src="../../assets/design-playbook/welding/image119.png" alt="Weld between two points example 1" width="226" height="150">
+  <img src="../../assets/design-playbook/welding/image120.png" alt="Weld between two points example 2" width="197" height="150">
+</div>
 
 !!! note
     The arrow can be drawn with ALT + 26.
 
 **Chain intermittent welds**
 
-![Chain intermittent weld example](../assets/design-playbook/welding/image121.png){ .center }
+![Chain intermittent weld example](../assets/design-playbook/welding/image121.png){ width="800" .center }
 
-!!! tip "Rules"
+!!! Success "Rules"
     - The number of welds has to be specified only if relevant.
     - The lengths of weld and of space don't have to be exact to the mm, but rounded.
 
 **Staggered intermittent weld** — less deformation of thin plates
 
-![Staggered intermittent weld example](../assets/design-playbook/welding/image122.png){ .center }
+![Staggered intermittent weld example](../assets/design-playbook/welding/image122.png){ width="800" .center }
 
-!!! tip "Rules"
+!!! Success "Rules"
     - The number of welds has to be specified only if relevant.
     - The lengths of weld and of space don't have to be exact to the mm, but rounded.
 
@@ -154,16 +169,30 @@ European standards use the following rules:
 - The arrow always points to a visible line (never to a hidden line).
 - The location of the weld (in red) is defined by the position of the arrow and the position of the welding symbol regarding the dashed line:
 
-![Fig.1](../assets/design-playbook/welding/image123.png){ width="200" .center }
-![Fig.2](../assets/design-playbook/welding/image124.png){ width="220" .center }
-![Fig.3](../assets/design-playbook/welding/image125.png){ width="200" .center }
+<div class="image-row" style="gap: 5rem;">
+  <figure>
+    <img src="../../assets/design-playbook/welding/image123.png" alt="Fig.1" width="152" height="130">
+    <figcaption>Fig. 1</figcaption>
+  </figure>
+  <figure>
+    <img src="../../assets/design-playbook/welding/image124.png" alt="Fig.2" width="176" height="130">
+    <figcaption>Fig. 2</figcaption>
+  </figure>
+  <figure>
+    <img src="../../assets/design-playbook/welding/image125.png" alt="Fig.3" width="154" height="130">
+    <figcaption>Fig. 3</figcaption>
+  </figure>
+</div>
 
-- One side is welded: the side of the arrow. The symbol is placed on top. (Fig.1)
-- One side is welded: the opposite side of the arrow. The symbol is placed at the bottom. (Fig.2)
-- Both sides have the same weld: the dashed line is removed. (Fig.3)
-- Both sides have different welds: the dashed line is kept. (Fig.4)
+- One side is welded: the side of the arrow. The symbol is placed on top. (Fig. 1)
+- One side is welded: the opposite side of the arrow. The symbol is placed at the bottom. (Fig. 2)
+- Both sides have the same weld: the dashed line is removed. (Fig. 3)
+- Both sides have different welds: the dashed line is kept. (Fig. 4)
 
-![Fig.4 - dashed line kept for different welds on both sides](../assets/design-playbook/welding/image126.png){ width="260" .center }
+<figure class="center">
+  <img src="../../assets/design-playbook/welding/image126.png" alt="Fig.4 - dashed line kept for different welds on both sides" width="350">
+  <figcaption>Fig. 4</figcaption>
+</figure>
 
 - When it's not important to specify which part needs to be prepared, or when no preparation is needed, multiple (broken) lines can be used to indicate identical welds.
 
@@ -177,7 +206,7 @@ European standards use the following rules:
 
 Additional information and special remarks about the weld can be added to the symbol in the tail.
 
-!!! tip "Rule"
+!!! Success "Rule"
     The tail has to be **open** for additional information and **closed** for a reference to any document (such as a WPS).
 
 ![Open vs closed tail on a welding symbol](../assets/design-playbook/welding/image129.png){ .center }
@@ -222,6 +251,23 @@ American standards use `z`.
 - Single sided weld: a ≥ 0.8 x t
 
 Where `t` is the thickness of the thinnest plate.
+
+For simple welds, the following weld sizes can be used, depending on the plate thickness:
+
+<div class="compact-table">
+
+<table>
+<tr><th>Plate thickness</th><th>Weld size</th></tr>
+<tr><td>2</td><td>a1,5</td></tr>
+<tr><td>3</td><td>a2</td></tr>
+<tr><td>4</td><td>a2</td></tr>
+<tr><td>5</td><td>a3</td></tr>
+<tr><td>6</td><td>a4</td></tr>
+<tr><td>8</td><td>a5</td></tr>
+<tr><td>10</td><td>a7</td></tr>
+</table>
+
+</div>
 
 !!! warning "Important"
     Always check that there is enough space to weld. If `a3` is specified, 3 x 1.4 = 4.2 mm minimum of available surface is required.

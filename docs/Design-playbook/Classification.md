@@ -4,7 +4,7 @@
 
 These are the criteria where commercial parts are checked for release approval.
 
-![Classification checkbox criteria](../assets/design-playbook/classification/image142.png){ .center }
+![Classification checkbox criteria](../assets/design-playbook/classification/image142.png){ width="700" .center }
 
 ## Approval planning
 

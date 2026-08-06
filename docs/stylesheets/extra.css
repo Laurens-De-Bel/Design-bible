@@ -129,6 +129,31 @@ body:has(.ar-hero) .md-tabs {
   padding: 0.3em 1.25em;
 }
 
+/* Small caption under an image, e.g. "Fig. 1". Wrap the image in
+   <figure>...<figcaption>...</figcaption></figure>. Inside
+   <div class="image-row">, the row's own centering is enough; for a
+   single standalone figure add class="center" to the <figure> itself
+   (display: table + margin: 0 auto centers it at its own content
+   width, unlike a plain block element which would need an explicit
+   width to center). */
+.image-row figure,
+figure.center {
+  margin: 0;
+  text-align: center;
+}
+
+figure.center {
+  display: table;
+  margin: 0 auto;
+}
+
+.image-row figcaption,
+figure.center figcaption {
+  margin-top: 0.25rem;
+  font-size: 0.85rem;
+  color: var(--md-default-fg-color--light);
+}
+
 /* Empty slot for an image that hasn't been added yet - swap the
    surrounding <div class="img-placeholder">...</div> for a normal
    <img> tag once the real figure is available. */
