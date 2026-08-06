@@ -43,4 +43,4 @@ For the width of the slots, the same rules apply as for holes. The length of the
         - Bolt size = M16
         - Hole diameter = Ø20
         - Slot width = 10 mm
-![Slot dimensions](../assets/design-playbook/Hole-slot-dimensions/image001.png){ width="700" .center }
+![Slot dimensions](../assets/design-playbook/hole-slot-dimensions/image001.png){ width="700" .center }

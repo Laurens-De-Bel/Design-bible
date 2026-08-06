@@ -177,24 +177,6 @@ figure.center figcaption {
   color: var(--md-default-fg-color--light);
 }
 
-/* Empty slot for an image that hasn't been added yet - swap the
-   surrounding <div class="img-placeholder">...</div> for a normal
-   <img> tag once the real figure is available. */
-.img-placeholder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 90px;
-  height: 90px;
-  margin: 0 auto 0.25rem;
-  border: 1px dashed var(--md-default-fg-color--light);
-  border-radius: 0.2rem;
-  color: var(--md-default-fg-color--light);
-  font-size: 0.6rem;
-  text-align: center;
-  padding: 0.25rem;
-}
-
 /* Homepage hero + section cards */
 .ar-home {
   display: flex;

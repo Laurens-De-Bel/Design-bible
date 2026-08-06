@@ -5,4 +5,4 @@ If a model is drawn shorter than its width, height or diameter (e.g. a HEB 400 m
 This is also the way to dimension a flexible pipe (cfr Design playbook *Piping*).
 
 
-![Excel list, continued](../assets/design-playbook/info-SW/image_SW.png){ .center }
+![Overrule geometric attributes](../assets/design-playbook/info-sw/image_SW.png){ .center }

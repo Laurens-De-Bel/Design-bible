@@ -25,11 +25,11 @@
 
 ## Build-up structure in Windchill/CEDM and names
 
-The general rule is that the build-up and naming of the machines and assemblies follow the P&ID and machines list.
+The general rule is that the build-up and naming of the machines and assemblies follow the P&ID (Piping and Instrumentation Diagram) and machines list.
 
 ### Main file and zones
 
-In the P&ID, the installation is divided into zones. This is the first level of the structure in CEDM.
+In the P&ID, the installation is divided into zones. This is the first level of the structure in CEDM (Creo Elements/Direct Modeling).
 
 From this example of P&ID:
 
