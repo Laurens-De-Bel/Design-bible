@@ -26,7 +26,7 @@ st.set_page_config(page_title="DMS magnetite / FeSi calculator")
 st.markdown(
     """
     <style>
-    .block-container { padding-top: 1rem; }
+    .block-container { padding-t5op: 1rem; }
     [data-testid="stApp"],
     [data-testid="stAppViewContainer"],
     [data-testid="stMain"] {
@@ -42,7 +42,7 @@ st.title("Dense medium separation - magnetite / FeSi calculator")
 
 st.markdown(
     "Estimates the amount of magnetite or FeSi (in tons) needed to fill "
-    "a dense medium separation (DMS) circuit up to a target medium density."
+    "a dense medium separation (DMS) circuit up to a target medium density. test"
 )
 
 # The only two materials this calculator is used for, with their typical

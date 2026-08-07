@@ -15,6 +15,8 @@ Writes <name>.html next to each source .py file. Re-run this any time a
 hand-edit.
 """
 
+import ast
+import base64
 import html
 import sys
 from pathlib import Path
@@ -71,8 +73,59 @@ TEMPLATE = """<!doctype html>
 """
 
 
+def _images_prelude(py_path: Path) -> str:
+    """Python source that recreates a sibling images/ folder inside
+    Pyodide's virtual filesystem, so a calculator can just call
+    st.image("images/x.png") and have it work identically under a normal
+    `streamlit run` (real files on disk) and here (no real disk at all).
+    Returns "" if the calculator has no images/ folder to bundle."""
+    images_dir = py_path.parent / "images"
+    if not images_dir.is_dir():
+        return ""
+
+    lines = [
+        "import base64 as _b64_calc, pathlib as _pathlib_calc",
+        '_pathlib_calc.Path("images").mkdir(exist_ok=True)',
+    ]
+    for image_path in sorted(images_dir.iterdir()):
+        if not image_path.is_file():
+            continue
+        encoded = base64.b64encode(image_path.read_bytes()).decode("ascii")
+        lines.append(
+            f'_pathlib_calc.Path("images/{image_path.name}").write_bytes('
+            f'_b64_calc.b64decode("{encoded}"))'
+        )
+    return "\n".join(lines) + "\n\n"
+
+
+def _insert_after_docstring(source: str, prelude: str) -> str:
+    """Splice `prelude` in right after the module docstring, if there is
+    one, instead of before it. Prepending code demotes a real module
+    docstring to just an ordinary bare string expression (no longer the
+    file's literal first statement) - and Streamlit's magic commands
+    feature auto-renders bare string expressions, so a demoted docstring
+    would leak onto the page as visible text. Splicing after it leaves it
+    as the true first statement, exempt from that."""
+    if not prelude:
+        return source
+    tree = ast.parse(source)
+    has_docstring = (
+        tree.body
+        and isinstance(tree.body[0], ast.Expr)
+        and isinstance(tree.body[0].value, ast.Constant)
+        and isinstance(tree.body[0].value.value, str)
+    )
+    if not has_docstring:
+        return prelude + source
+    end_line = tree.body[0].end_lineno
+    lines = source.splitlines(keepends=True)
+    return "".join(lines[:end_line]) + "\n" + prelude + "".join(lines[end_line:])
+
+
 def build(py_path: Path) -> Path:
-    source = py_path.read_text(encoding="utf-8")
+    source = _insert_after_docstring(
+        py_path.read_text(encoding="utf-8"), _images_prelude(py_path)
+    )
 
     # <streamlit-app> is a normal HTML custom element, not a "raw text"
     # element like <script>/<style> - the browser parses its content as

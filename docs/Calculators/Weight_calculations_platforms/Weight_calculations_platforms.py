@@ -7,9 +7,23 @@ Ported from "Documents/Calculators/Weight calculations platforms.xlsm"
 two as fixed constants/formulas).
 """
 
+import pathlib
+
 import streamlit as st
+from PIL import Image
 
 G = 9.81  # N/kg
+
+# Streamlit resolves relative paths against the working directory you ran
+# `streamlit run` from, not this script's own folder - so a plain
+# "images/..." path breaks unless you happen to run from here. In the
+# stlite build, the generated HTML writes the bundled images into
+# Pyodide's (CWD-relative) "images/" folder before this script runs, so
+# that plain relative path is exactly right there; only fall back to a
+# path relative to this file for a normal `streamlit run` from elsewhere.
+IMAGES_DIR = pathlib.Path("images")
+if not IMAGES_DIR.is_dir():
+    IMAGES_DIR = pathlib.Path(__file__).parent / "images"
 
 # --- C-profile inertia (sheet "Inertia C-profile") ----------------------
 # Fixed cross-section, not user-selectable - derived once. Two C-profiles
@@ -40,6 +54,18 @@ PROTECTION_Q = {
 STAIR_FRAME_Q = 255 * G / 3800  # N per mm of stair height
 STEP_TREAD_DEPTH = 270  # mm
 STEP_GRID = "30x30x2"  # steps always use this grid, regardless of the platform's own grid choice
+
+
+DIAGRAM_HEIGHT = 300  # px - both support diagrams are shown at this same
+# height (widths differ, since the two aren't the same aspect ratio) so
+# switching "Support" doesn't jump the rest of the page up/down.
+
+
+def _load_diagram(path: pathlib.Path) -> Image.Image:
+    img = Image.open(path)
+    width_px, height_px = img.size
+    target_width = round(width_px * DIAGRAM_HEIGHT / height_px)
+    return img.resize((target_width, DIAGRAM_HEIGHT))
 
 
 def platform_panel_weight_kg(width_mm: float, length_mm: float = 3700) -> float:
@@ -158,6 +184,15 @@ if stairs == "Yes":
     weight_stairs, supported_n = stairs_weight_kg(height_stairs, width_stairs)
 
 lmax = max_free_length(support, stairs, q, supported_n or 0.0)
+
+# Reference diagram for whichever support type is currently selected, from
+# the "Max free length" sheet of the source workbook.
+SUPPORT_DIAGRAMS = {
+    "Both sides": IMAGES_DIR / "support_both_sides.png",
+    "One side": IMAGES_DIR / "support_one_side.png",
+}
+with st.container(horizontal_alignment="center"):
+    st.image(_load_diagram(SUPPORT_DIAGRAMS[support]))
 
 st.divider()
 col1, col2, col3 = st.columns(3)
