@@ -13,11 +13,21 @@ import streamlit as st
 
 st.set_page_config(page_title="DMS magnetite / FeSi calculator")
 
+# This app only ever runs inside an <iframe> on the site (see index.md) -
+# trim Streamlit's default top padding, which exists to leave room for
+# its own header/toolbar, since that space just reads as dead whitespace
+# here.
+st.markdown(
+    "<style>.block-container { padding-top: 1rem; }</style>",
+    unsafe_allow_html=True,
+)
+
 st.title("Dense medium separation - magnetite / FeSi calculator")
 
 st.markdown(
     "Estimates the amount of magnetite or FeSi (in tons) needed to fill "
     "a dense medium separation (DMS) circuit up to a target medium density."
+    "test test test"
 )
 
 # The only two materials this calculator is used for, with their typical

@@ -4,11 +4,15 @@ page that runs entirely in the browser via WebAssembly (no server) - for
 embedding in the static mkdocs site through an <iframe>.
 
 Usage:
-    .venv\\Scripts\\python scripts\\build_calculator.py docs\\Calculators\\Info_magnetiet_FeSi.py
+    Rebuild one calculator by path:
+        .venv\\Scripts\\python scripts\\build_calculator.py docs\\Calculators\\Info_magnetiet_FeSi\\Info_magnetiet_FeSi.py
 
-Writes Info_magnetiet_FeSi.html next to the source .py file. Re-run this
-any time the .py file changes - the .html is generated output, not
-something to hand-edit.
+    Rebuild whichever calculators are uncommented in CALCULATORS below:
+        .venv\\Scripts\\python scripts\\build_calculator.py
+
+Writes <name>.html next to each source .py file. Re-run this any time a
+.py file changes - the .html is generated output, not something to
+hand-edit.
 """
 
 import html
@@ -72,10 +76,16 @@ def build(py_path: Path) -> Path:
     return out_path
 
 
-if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: python scripts/build_calculator.py <path-to-calculator.py>")
-        sys.exit(1)
+# Comment/uncomment a line to control which calculator(s) get rebuilt
+# when running this script with no arguments (add a new line here for
+# every new calculator).
+CALCULATORS = [
+    Path("docs/Calculators/Info_magnetiet_FeSi/Info_magnetiet_FeSi.py"),
+    #Path("docs/Calculators/Weight_calculations_platforms/Weight_calculations_platforms.py"),
+]
 
-    result = build(Path(sys.argv[1]))
-    print(f"Wrote {result}")
+if __name__ == "__main__":
+    targets = [Path(sys.argv[1])] if len(sys.argv) == 2 else CALCULATORS
+    for py_path in targets:
+        result = build(py_path)
+        print(f"Wrote {result}")

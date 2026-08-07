@@ -101,6 +101,16 @@ def max_free_length(support: str, stairs: str, q: float, supported_n: float) -> 
 
 
 st.set_page_config(page_title="Platform / stairs calculator")
+
+# This app only ever runs inside an <iframe> on the site (see index.md) -
+# trim Streamlit's default top padding, which exists to leave room for
+# its own header/toolbar, since that space just reads as dead whitespace
+# here.
+st.markdown(
+    "<style>.block-container { padding-top: 1rem; }</style>",
+    unsafe_allow_html=True,
+)
+
 st.title("Platform load and maximum free length")
 
 st.markdown(
