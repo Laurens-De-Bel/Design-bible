@@ -13,12 +13,28 @@ import streamlit as st
 
 st.set_page_config(page_title="DMS magnetite / FeSi calculator")
 
-# This app only ever runs inside an <iframe> on the site (see index.md) -
-# trim Streamlit's default top padding, which exists to leave room for
-# its own header/toolbar, since that space just reads as dead whitespace
-# here.
+# This app only ever runs inside an <iframe> on the site (see index.md),
+# which measures our full content height via a script and resizes itself
+# to fit - so nothing here should scroll internally. Streamlit's own
+# layout normally pins stApp/stAppViewContainer/stMain to the viewport
+# height, with stApp itself clipping (overflow: hidden, no scrollbar) any
+# content taller than that instead of just scrolling it - switch all
+# three to auto/visible so the page's true height is exposed instead.
+# Also trim the default top padding, which exists to leave room for
+# Streamlit's own header/toolbar (dead space here, since there's none of
+# that in an embed).
 st.markdown(
-    "<style>.block-container { padding-top: 1rem; }</style>",
+    """
+    <style>
+    .block-container { padding-top: 1rem; }
+    [data-testid="stApp"],
+    [data-testid="stAppViewContainer"],
+    [data-testid="stMain"] {
+        height: auto !important;
+        overflow: visible !important;
+    }
+    </style>
+    """,
     unsafe_allow_html=True,
 )
 
@@ -27,7 +43,6 @@ st.title("Dense medium separation - magnetite / FeSi calculator")
 st.markdown(
     "Estimates the amount of magnetite or FeSi (in tons) needed to fill "
     "a dense medium separation (DMS) circuit up to a target medium density."
-    "test test test"
 )
 
 # The only two materials this calculator is used for, with their typical

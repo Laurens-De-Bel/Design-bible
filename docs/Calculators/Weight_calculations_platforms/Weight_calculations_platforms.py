@@ -102,12 +102,28 @@ def max_free_length(support: str, stairs: str, q: float, supported_n: float) -> 
 
 st.set_page_config(page_title="Platform / stairs calculator")
 
-# This app only ever runs inside an <iframe> on the site (see index.md) -
-# trim Streamlit's default top padding, which exists to leave room for
-# its own header/toolbar, since that space just reads as dead whitespace
-# here.
+# This app only ever runs inside an <iframe> on the site (see index.md),
+# which measures our full content height via a script and resizes itself
+# to fit - so nothing here should scroll internally. Streamlit's own
+# layout normally pins stApp/stAppViewContainer/stMain to the viewport
+# height, with stApp itself clipping (overflow: hidden, no scrollbar) any
+# content taller than that instead of just scrolling it - switch all
+# three to auto/visible so the page's true height is exposed instead.
+# Also trim the default top padding, which exists to leave room for
+# Streamlit's own header/toolbar (dead space here, since there's none of
+# that in an embed).
 st.markdown(
-    "<style>.block-container { padding-top: 1rem; }</style>",
+    """
+    <style>
+    .block-container { padding-top: 1rem; }
+    [data-testid="stApp"],
+    [data-testid="stAppViewContainer"],
+    [data-testid="stMain"] {
+        height: auto !important;
+        overflow: visible !important;
+    }
+    </style>
+    """,
     unsafe_allow_html=True,
 )
 

@@ -8,6 +8,9 @@ plugins:
 extra_css:
   - stylesheets/extra.css
 
+extra_javascript:
+  - javascripts/iframe-resize.js
+
 site_name: Engineering playbook
 site_url: https://adrem-engineering-playbook.com
 
