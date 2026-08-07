@@ -14,6 +14,21 @@
     margin: 0;
     height: 100%;
   }
+
+  /* stlite mounts the actual rendered app as a position:fixed child of
+     <streamlit-app> (so it's unaffected by this), but never clears the
+     original Python source text that's still sitting inside it as a
+     sibling text node - left alone, that text renders in normal
+     document flow and inflates this page's real height far beyond the
+     visible app, which shows up as a bogus internal scrollbar once
+     something outside sizes the iframe to the app's true (smaller)
+     height. Collapsing streamlit-app's own box to nothing hides that
+     leftover text without touching the fixed-position app itself. */
+  streamlit-app {
+    display: block;
+    height: 0;
+    overflow: hidden;
+  }
 </style>
 </head>
 <body>
