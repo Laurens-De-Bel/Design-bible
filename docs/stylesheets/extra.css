@@ -16,6 +16,18 @@
   color: #bdbdbd;
 }
 
+/* Apply with # Heading { .hide-page-title } to keep a heading's text
+   driving the browser tab title / nav label / breadcrumbs as normal,
+   while not showing it on the page itself - e.g. calculator pages that
+   embed a Streamlit app with its own st.title() already visible inside
+   the iframe. Material auto-inserts a duplicate <h1> from the page title
+   whenever the content has no h1 of its own, so removing the heading
+   entirely doesn't work - it just comes back. Hiding it like this
+   satisfies that "already has an h1" check instead. */
+.hide-page-title {
+  display: none;
+}
+
 /* Same background as the homepage cards (.ar-card), so the closed
    search bar matches the site's card color instead of Material's
    default translucent-black pill. */

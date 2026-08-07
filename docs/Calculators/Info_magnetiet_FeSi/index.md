@@ -1,9 +1,12 @@
-# Dense Medium Separation - magnetite / FeSi calculator
+---
+hide:
+  - toc
+---
 
-Estimates the amount of magnetite or FeSi (in tons) needed to fill a Dense Medium Separation (DMS) circuit up to a target medium density.
+# Dense Medium Separation - magnetite / FeSi calculator { .hide-page-title }
 
 <iframe
-  src="../Info_magnetiet_FeSi.html"
+  src="Info_magnetiet_FeSi.html"
   style="width: 100%; height: 720px; border: none;"
   title="Dense Medium Separation - magnetite / FeSi calculator"
 ></iframe>

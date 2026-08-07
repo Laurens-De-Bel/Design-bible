@@ -129,7 +129,7 @@ nav:
     - Design-playbook/Norms-on-electrics.md
   - Calculators:
     - Calculators/index.md
-    - Calculators/Info_magnetiet_FeSi.md
-    - Calculators/Content-tabs-with-code.md
+    - Calculators/Info_magnetiet_FeSi/index.md
+    - Calculators/Weight_calculations_platforms/index.md
   - Standards:
     - Standards/index.md
