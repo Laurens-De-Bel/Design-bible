@@ -1,0 +1,1437 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://adrem-engineering-playbook.com/Design-playbook/Corrupt-parts/">
+      
+      
+        <link rel="prev" href="../Guidelines-and-structure/">
+      
+      
+        <link rel="next" href="../Bolt-connections/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/AdRem_logo_white.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Corrupt parts and how to solve them - Engineering playbook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#corrupt-parts-and-how-to-solve-them" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Engineering playbook" class="md-header__button md-logo" aria-label="Engineering playbook" data-md-component="logo">
+      
+  <img src="../../assets/AdRem_name+logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Engineering playbook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Corrupt parts and how to solve them
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Design playbook
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Calculators/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Calculators
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Standards/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Standards
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Engineering playbook" class="md-nav__button md-logo" aria-label="Engineering playbook" data-md-component="logo">
+      
+  <img src="../../assets/AdRem_name+logo.png" alt="logo">
+
+    </a>
+    Engineering playbook
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design playbook
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Design playbook
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Guidelines-and-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guidelines &amp; structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Corrupt parts and how to solve them
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Corrupt parts and how to solve them
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-detect-a-corrupted-part" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to detect a corrupted part
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-types-of-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended types of files
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common problems
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simplification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simplification
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#healing-step-by-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Healing step by step
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Bolt-connections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bolt connections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Hole-slot-dimensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hole / slot dimensions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Structure-and-platform-information/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Structure and platform information
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Mounting-machine-parts-on-structures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mounting machine(parts) on structures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Sheet-metal-information/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sheet metal information
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Info-LaserCut/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Info LaserCut
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Info-Saw-Work-SW/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Info Saw Work SW
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Database-agreements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database agreements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Welding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Platforms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platforms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Geared-motors-Siemens/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geared motors (Siemens)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Classification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Classification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Norms-on-electrics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Norms on electrics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Calculators/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Calculators
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Calculators
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Calculators/Info_magnetiet_FeSi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dense Medium Separation - magnetite / FeSi calculator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Calculators/Weight_calculations_platforms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform load and maximum free length
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Standards/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Standards
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Standards
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-detect-a-corrupted-part" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to detect a corrupted part
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-types-of-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended types of files
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common problems
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simplification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simplification
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#healing-step-by-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Healing step by step
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="corrupt-parts-and-how-to-solve-them">Corrupt parts and how to solve them</h1>
+<p>Nowadays, we can load many kinds of 3D models into our drawing program. But many models coming from suppliers are drawn on a different program and have a different resolution. That can sometimes cause problems.</p>
+<p>These models are corrupted and can have a big impact on loading, saving and adapting the drawing in 3D and 2D. In most cases the system will try to solve these parts by calculating the surfaces, but when there are a lot of corrupt parts, the system can't handle the process, goes into time-out and stops loading the package. This surely requires some attention.</p>
+<p>Below you can find a roadmap for dealing with corrupted parts.</p>
+<h2 id="how-to-detect-a-corrupted-part">How to detect a corrupted part</h2>
+<p><strong>Visual inspection</strong></p>
+<p>When loading a part, it's mostly visible that the part is corrupt via the labels or cyan coloured faces or edges.</p>
+<p><img alt="Corrupted part shown with cyan coloured faces" class="center" src="../../assets/design-playbook/corrupt-parts/image10.png" /></p>
+<p>Transparent faces can also be an indication of face parts that can cause corruption.</p>
+<p><img alt="Part with transparent faces" class="center" src="../../assets/design-playbook/corrupt-parts/image11.png" /></p>
+<p><strong>Function 'Check Part'</strong></p>
+<p>Sometimes it's less visually obvious that the part is corrupt, and that's why you should <strong>always perform a 'check part' on any imported CAD file</strong>.</p>
+<p><img alt="The 'Check Part' function in the toolbar" class="center" src="../../assets/design-playbook/corrupt-parts/image13.png" /></p>
+<p><strong>Big files will take a long time to check.</strong> If the file contains too much detail, please start with the simplification of the part as explained under <a href="#simplification">Simplification</a>.</p>
+<p>By selecting the object and performing a Maximal check, the system will check the part for corruption.</p>
+<p><img alt="Performing a Maximal check on a part" class="center" src="../../assets/design-playbook/corrupt-parts/image15.png" /></p>
+<p>Make sure to keep the 'labels' checked on to view where the problem occurs.</p>
+<p><img alt="Labels enabled showing where the problem occurs" class="center" src="../../assets/design-playbook/corrupt-parts/image16.png" /></p>
+<p>In some cases the function will also heal the part. If you get the following remark when checking a part, the system is working on a fix for it and advises to check it again.</p>
+<p><img alt="System remark advising to check the part again" class="center" src="../../assets/design-playbook/corrupt-parts/image17.png" /></p>
+<p>If you check it again, you might get lucky and the system will have successfully healed it.</p>
+<p><img alt="Part successfully healed after a second check" class="center" src="../../assets/design-playbook/corrupt-parts/image18.png" /></p>
+<h2 id="recommended-types-of-files">Recommended types of files</h2>
+<p>According to the situation, you should opt for these file types:</p>
+<ul>
+<li>
+<p><strong>LSP</strong> or <strong>PKG</strong></p>
+<p>The main advantage of an LSP file is that it's built in modelling, so there is a low probability of corruption. Even colours and part weight are correct straight from the box.</p>
+<p>A disadvantage of using this type of file is that you need to make a copy before saving it. In case people forget, the system will lock this part and make it impossible to make any adjustments, like changing the part name.</p>
+</li>
+<li>
+<p><strong>STEP</strong></p>
+<p>Step files are commonly available, but aren't the best option for our drawing program.</p>
+<p>When loading step files, always perform a check part. In most cases the part will be ok. In case the part contains errors, it might still be solvable. If it contains too many errors, switch to the next file type.</p>
+<p>It can help to adjust the settings in modelling when loading a step file:</p>
+<p><div class="image-row">
+    <img src="../../assets/design-playbook/corrupt-parts/image21.png" alt="Modelling settings for loading a step file" width="510">
+    <img src="../../assets/design-playbook/corrupt-parts/image22.png" alt="Modelling settings for loading a step file, continued">
+</div></p>
+</li>
+<li>
+<p><strong>SAT</strong> or <strong>IGES</strong></p>
+<p>SAT and IGES files are also commonly available, but have the big disadvantage that they don't have a build-up structure and just place all parts under the structure browser without an assembly. It's advised to also start with a check part and see if the part is ok or not.</p>
+</li>
+</ul>
+<p>Depending on the situation, some parts will be better in STEP and some will be better in SAT. Feel free to even make combinations of good parts from different files to make an assembly.</p>
+<h2 id="common-problems">Common problems</h2>
+<p><strong>RESOLUTION</strong></p>
+<p>Most problems occur when the resolution of the part is too low. To be consulted under the following tab:</p>
+<p><img alt="Resolution setting under part properties" class="center" src="../../assets/design-playbook/corrupt-parts/image24.png" /></p>
+<p>All parts designed in modelling have a standard resolution of 1.0E-5 mm. If the resolution becomes too large and the part has many roundings with a radius or ribs smaller than the resolution, modelling errors will be generated. Manually increasing the resolution under part properties isn't possible.</p>
+<p><strong>Common solutions:</strong></p>
+<ul>
+<li>
+<p><strong>Cut faces</strong></p>
+<p>By cutting away the faces that give problems, it might be possible to delete the sharp edge that is giving trouble. Just hover over the face and press the 'tab' key until the whole boss or pocket is selected, then use the 'cut' tool.</p>
+<p><img alt="Example of cut faces tool" class="center" src="../../assets/design-playbook/corrupt-parts/image25.png" /></p>
+<p>In some cases it's not possible to use the 'tab' key. Then it's better to keep pressing the 'shift' key and manually select the faces until it's possible to close the loop and use the 'cut' tool.</p>
+</li>
+<li>
+<p><strong>Cut logos and details</strong></p>
+<p>Logos and details like threaded holes are often too sharp for the resolution of the part and will cause corruption. Simply delete them using the 'cut' tool.</p>
+<p><div class="image-row">
+    <img src="../../assets/design-playbook/corrupt-parts/image29.png" alt="Logo and detail removed using the cut tool" width="455" height="300">
+    <img src="../../assets/design-playbook/corrupt-parts/image30.png" alt="Detail removed using the cut tool, continued" width="194" height="300">
+</div></p>
+</li>
+<li>
+<p><strong>Removing edges, roundings and void shells</strong></p>
+<p>Sharp edges and roundings on a part can also cause corruption. It's best to remove them and, if you like, you can reapply the bend on the edge.</p>
+<p>Keep in mind that bends have a high impact on the details of a part and its file size. If it's not necessary, just avoid them.</p>
+<p><img alt="Edges and roundings removed from a part" class="center" src="../../assets/design-playbook/corrupt-parts/image31.png" />
+<img alt="Void shells inside a part" class="center" src="../../assets/design-playbook/corrupt-parts/image32.png" /></p>
+<p>Void shells are small pockets inside the solid of a part, often caused by the simplification of the part. Hole clearances for fasteners and plastic flow holes and ribs are an example of this. They can be found by using the 'check part' function; the labels will show their position. Simply cut them away with the 'cut' tool.</p>
+</li>
+<li>
+<p><strong>Too much detail</strong></p>
+<p>Some models contain too much detail and this requires a lot of calculation to load. If it's not really necessary from a mechanical point of view, delete it.</p>
+<p><img alt="Part with excessive detail" class="center" src="../../assets/design-playbook/corrupt-parts/image33.png" />
+<img alt="Part after removing excessive detail" class="center" src="../../assets/design-playbook/corrupt-parts/image34.png" /></p>
+</li>
+<li>
+<p><strong>Face parts</strong></p>
+<p>Some parts are missing a face and the system can't calculate it as a solid — this is called a face part. If there are too many faces missing, it's better to try another file type, or another solid that is very similar. But sometimes it's solvable via the following functions:</p>
+<ul>
+<li>
+<p><strong>'Show Gaps'</strong> will indicate where a face is missing and highlight it with orange edges.</p>
+<p><img alt="The 'Show Gaps' function highlighting a missing face" class="center" src="../../assets/design-playbook/corrupt-parts/image37.png" /></p>
+</li>
+<li>
+<p>Sometimes it's advised to delete surfaces that are causing the problems. The <strong>'Delete Face'</strong> tool can be used to delete as many faces as required.</p>
+<p><img alt="The 'Delete Face' tool in use" class="center" src="../../assets/design-playbook/corrupt-parts/image39.png" /></p>
+</li>
+<li>
+<p>With the <strong>'Insert Face'</strong> tool, you generate a face where one was previously deleted, by pressing the 'shift' key and selecting the edges until you connect a loop where the face is missing.</p>
+<p><img alt="Using 'Insert Face' to close a loop of edges" class="center" src="../../assets/design-playbook/corrupt-parts/image41.png" />
+<img alt="Face inserted after connecting the loop" class="center" src="../../assets/design-playbook/corrupt-parts/image42.png" /></p>
+</li>
+<li>
+<p>Parallel to 'Insert Face', you can use <strong>'Grow Surface'</strong> if the complexity of the part allows it. Keep in mind that 'Grow Surface' is a more automated solving tool that will take longer to be calculated by the system and is more prone to fail. In case the part is too complex, it's preferred to manually cut and insert faces where needed.</p>
+<p>When using the 'Grow Surface' tool, simply select the part. The edges where the face is missing will be indicated in orange.</p>
+<p><img alt="Face part successfully turned into a solid" class="center" src="../../assets/design-playbook/corrupt-parts/image44.png" /></p>
+<p>If it succeeds, the part will change into a solid instead of a face part.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Part corruption too complex to solve</strong></p>
+<p>In some cases the part will be too corrupt to solve. In this case it's better to search for a better CAD file on the databases, or search our own library for a similar part that might be mechanically the same but has other specifications, and adapt the name and attributes accordingly.</p>
+<p>Like in this example, we searched the databases for an encoder and found that the model we need is corrupted. After loading different variations of the encoder, we discovered a CAD model that's not corrupt and used this as our base model to save in the system, adapting the name to the one we needed.</p>
+<p><img alt="Different encoder model variations compared" class="center" src="../../assets/design-playbook/corrupt-parts/image45.png" /></p>
+<p>If that's not possible, as a last resort, you can always sketch the contours of the part and extrude it so the basic details like mounting hole positions and general size of the part are correct.</p>
+<p><img alt="Part contour sketched and extruded as a last resort" class="center" src="../../assets/design-playbook/corrupt-parts/image46.png" /></p>
+</li>
+</ul>
+<h2 id="simplification">Simplification</h2>
+<ul>
+<li>
+<p><strong>Removing unnecessary assemblies, face parts and containers</strong></p>
+<p>Imported parts can sometimes be stored under a redundant assembly, or can contain containers with quilts due to the program it was originally saved in. It's advised to remove these assemblies and give it an appropriate name.</p>
+<p><img alt="Redundant assembly removed and renamed" class="center" src="../../assets/design-playbook/corrupt-parts/image47.png" /></p>
+</li>
+<li>
+<p><strong>Keep it simple</strong></p>
+<p>To keep the library neat, it's better to save a commercial part as simple as possible. Small details like internal electronics or the balls inside a bearing aren't important for the mechanical installation of the part, so feel free to delete them.</p>
+<ul>
+<li>
+<p>If the article doesn't contain specific details that are mechanically important, it is appropriate to save it as a part. By using the <strong>'Unite'</strong> function, you can glue different parts together as one.</p>
+<p><img alt="Using 'Unite' to combine parts into one" class="center" src="../../assets/design-playbook/corrupt-parts/image49.png" /></p>
+<p>It's better not to unite all pieces at once, but do it part by part. Each time after uniting 2 parts, perform a check part — that way you can find out which part becomes corrupt and discover why it's happening.</p>
+<p>In this example, the encoder shown above had all unimportant details deleted and all remaining pieces glued together until it became one part.</p>
+</li>
+<li>
+<p>If the article does contain specific details that are mechanically important, it is appropriate to save it as an assembly and set the assembly as inseparable. By using the <strong>'Inseparable'</strong> function, you force the system to only generate an article number for the assembly and not the underlying parts.</p>
+<p><img alt="Using 'Inseparable' to set an assembly" class="center" src="../../assets/design-playbook/corrupt-parts/image51.png" /></p>
+<p>If we take the example of the encoder again, we see that the mounting bracket can be used for different positions. So it might be better to keep this detail and use the function 'selective unshare' in case the mounting position should change.</p>
+<p>To keep the article as one, we create an assembly containing the encoder, bracket and fasteners. By setting the assembly as inseparable, only the assembly will get an article number and not the underlying parts.</p>
+<p><img alt="Encoder, bracket and fasteners kept as one inseparable assembly" class="center" src="../../assets/design-playbook/corrupt-parts/image52.png" /></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="healing-step-by-step">Healing step by step</h2>
+<p><img alt="Corrupted part healing process, step by step" class="center" src="../../assets/design-playbook/corrupt-parts/image53.png" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      ©2026 Ad Rem
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://www.linkedin.com/company/advanced-design-of-recycling-machines/posts/?feedView=all" target="_blank" rel="noopener" title="Ad Rem on LinkedIn" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.indexes", "navigation.top", "toc.follow", "search.suggest"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/iframe-resize.js"></script>
+      
+    
+  </body>
+</html>

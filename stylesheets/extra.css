@@ -1,0 +1,252 @@
+:root  > * {
+  --md-primary-fg-color:        #2c0600;
+}
+
+/* White header so the dark logo stays legible. */
+.md-header {
+  background-color: #fff;
+  color: var(--md-primary-fg-color);
+}
+
+.md-header .md-search__input + .md-search__icon {
+  color: #bdbdbd;
+}
+
+.md-header .md-search__input::placeholder {
+  color: #bdbdbd;
+}
+
+/* Apply with # Heading { .hide-page-title } to keep a heading's text
+   driving the browser tab title / nav label / breadcrumbs as normal,
+   while not showing it on the page itself - e.g. calculator pages that
+   embed a Streamlit app with its own st.title() already visible inside
+   the iframe. Material auto-inserts a duplicate <h1> from the page title
+   whenever the content has no h1 of its own, so removing the heading
+   entirely doesn't work - it just comes back. Hiding it like this
+   satisfies that "already has an h1" check instead. */
+.hide-page-title {
+  display: none;
+}
+
+/* Same background as the homepage cards (.ar-card), so the closed
+   search bar matches the site's card color instead of Material's
+   default translucent-black pill. */
+.md-search__form {
+  border: 1px solid var(--md-primary-fg-color);
+  background-color: #f4f2ee;
+  border-radius: 999px;
+}
+
+/* Apply with ![alt](path){ .center } to center a figure; remove the
+   class on individual images that should stay left-aligned instead
+   (e.g. small inline icons next to text). */
+.center {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Wrap two or more images in <div class="image-row">...</div> (plain
+   HTML <img> tags, not markdown syntax) to lay them out side by side,
+   left-to-right in source order, centered as a group. */
+.image-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.image-row img {
+  max-width: 100%;
+}
+
+/* Hide the tabs row only on the homepage. Done in CSS (keyed off the
+   hero markup that instant-navigation swaps in with the page content)
+   rather than by omitting the tabs from the page's HTML, because the
+   header itself is NOT re-rendered on instant navigation - server-side
+   removal left the tabs missing after clicking from the homepage into
+   a section until a full page reload. */
+body:has(.ar-hero) .md-tabs {
+  display: none;
+}
+
+/* Homepage: lock the page to the viewport height on screens roomy
+   enough for it (no scrolling), by turning header/main/footer into a
+   flex column so the hero+cards block exactly fills whatever space is
+   left over - rather than guessing header/footer heights in px/vh,
+   which drifts out of sync whenever either changes. */
+@media screen and (min-width: 45em) {
+  body:has(.ar-hero) {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  body:has(.ar-hero) .md-container,
+  body:has(.ar-hero) .md-main,
+  body:has(.ar-hero) .md-main__inner,
+  body:has(.ar-hero) .md-content,
+  body:has(.ar-hero) .md-content__inner {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+  }
+
+  .ar-home {
+    flex: 1;
+    min-height: 0;
+  }
+
+  .ar-hero {
+    flex: 1;
+    min-height: 0;
+  }
+}
+
+/* Auto-number each top-level section's page list in the sidebar nav
+   (Design playbook, Calculators, Standards, ...) - e.g. "1. Guidelines
+   & structure", "2. Corrupt parts...". Purely CSS-driven off document
+   order, so adding, removing or reordering chapters in mkdocs.yml's
+   nav never requires manually renumbering anything, and the page's own
+   title/heading and the top tab label stay unnumbered. */
+.md-nav[data-md-level="1"] > .md-nav__list {
+  counter-reset: md-nav-chapter;
+}
+
+.md-nav[data-md-level="1"] > .md-nav__list > .md-nav__item {
+  counter-increment: md-nav-chapter;
+}
+
+.md-nav[data-md-level="1"] > .md-nav__list > .md-nav__item > .md-nav__link .md-ellipsis::before,
+.md-nav[data-md-level="1"] > .md-nav__list > .md-nav__item > .md-nav__container .md-ellipsis::before {
+  content: counter(md-nav-chapter) ". ";
+}
+
+/* Highlight the current chapter in the sidebar with a colored left
+   border, since Material's default bold+color active state is easy to
+   miss next to the numbering prefix above. Scoped to the level-1 nav
+   (the chapter list itself) so it doesn't also mark the active heading
+   inside the page's own right-hand table of contents. */
+.md-nav[data-md-level="1"] .md-nav__link--active {
+  border-left: 3px solid var(--md-primary-fg-color);
+  padding-left: calc(0.6rem - 3px);
+}
+
+/* Reference-diagram table (e.g. "Choice of correct bolt length"): a
+   title bar spanning all columns, then a row of reference images, then
+   plain data rows. Left as a wrapper class (not a class on <table>
+   itself) so the table keeps Material's default border/background
+   styling, which only applies to tables with no class of their own. */
+.diagram-table table {
+  text-align: left;
+}
+
+.diagram-table th,
+.diagram-table td {
+  padding: 0.5rem 0.75rem;
+  vertical-align: middle;
+}
+
+.diagram-table th[colspan] {
+  background-color: #dbe5f4;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+/* Wrap a long reference table in <div class="compact-table">...</div>
+   to shrink the vertical cell padding - useful for long lookup tables
+   (many short rows) where Material's default row padding adds up to a
+   lot of scrolling. Adjust the padding value to taste. */
+.compact-table table:not([class]) td,
+.compact-table table:not([class]) th {
+  padding: 0.3em 1.25em;
+}
+
+/* Small caption under an image, e.g. "Fig. 1". Wrap the image in
+   <figure>...<figcaption>...</figcaption></figure>. Inside
+   <div class="image-row">, the row's own centering is enough; for a
+   single standalone figure add class="center" to the <figure> itself
+   (display: table + margin: 0 auto centers it at its own content
+   width, unlike a plain block element which would need an explicit
+   width to center). */
+.image-row figure,
+figure.center {
+  margin: 0;
+  text-align: center;
+}
+
+figure.center {
+  display: table;
+  margin: 0 auto;
+}
+
+.image-row figcaption,
+figure.center figcaption {
+  margin-top: 0.25rem;
+  font-size: 0.85rem;
+  color: var(--md-default-fg-color--light);
+}
+
+/* Homepage hero + section cards */
+.ar-home {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+}
+
+.ar-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 30vh;
+  background-color: var(--md-primary-fg-color);
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.ar-hero h1 {
+  color: #fff;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 400;
+  margin: 0;
+}
+
+.ar-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  flex-shrink: 0;
+}
+
+.ar-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 8rem;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  background-color: #f4f2ee;
+  color: var(--md-primary-fg-color);
+  font-size: 1.35rem;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow 0.15s, transform 0.15s;
+}
+
+.ar-card:hover,
+.ar-card:focus {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+  color: var(--md-primary-fg-color);
+}
+
+@media screen and (max-width: 44.9375em) {
+  .ar-card-grid {
+    grid-template-columns: 1fr;
+  }
+}

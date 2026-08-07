@@ -1,0 +1,204 @@
+"""
+Platform load, stairs weight and maximum free length calculator.
+
+Ported from "Documents/Calculators/Weight calculations platforms.xlsm"
+(3 sheets: C-profile inertia, weight lookup tables, and the interactive
+"Max free length" sheet - this rebuilds that last one, using the other
+two as fixed constants/formulas).
+"""
+
+import pathlib
+
+import streamlit as st
+from PIL import Image
+
+G = 9.81  # N/kg
+
+# Streamlit resolves relative paths against the working directory you ran
+# `streamlit run` from, not this script's own folder - so a plain
+# "images/..." path breaks unless you happen to run from here. In the
+# stlite build, the generated HTML writes the bundled images into
+# Pyodide's (CWD-relative) "images/" folder before this script runs, so
+# that plain relative path is exactly right there; only fall back to a
+# path relative to this file for a normal `streamlit run` from elsewhere.
+IMAGES_DIR = pathlib.Path("images")
+if not IMAGES_DIR.is_dir():
+    IMAGES_DIR = pathlib.Path(__file__).parent / "images"
+
+# --- C-profile inertia (sheet "Inertia C-profile") ----------------------
+# Fixed cross-section, not user-selectable - derived once. Two C-profiles
+# support each platform, hence the *2 on I2 and I3 below.
+I1 = 3 * 160**3 / 12
+I2 = 94 * 3**3 / 12 + 94 * 3 * 78.5**2
+I3 = 3 * 39**3 / 12 + 3 * 39 * 60.5**2
+I_TOT = I1 + 2 * I2 + 2 * I3  # mm^4
+
+E = 210000  # N/mm^2 (steel)
+F_MAX_BOTH_SIDES = 1 / 500  # allowable deflection ratio, support on both sides
+F_MAX_ONE_SIDE = 1 / 1000  # allowable deflection ratio, support on one side
+
+# --- Weight lookups (sheet "Weight platforms") --------------------------
+GRID_WEIGHTS = {"30x30x2": 23, "30x30x3": 34}  # kg/m^2
+STANDARD_LOAD = 250  # kg/m^2, live load the platform is designed for
+
+# Railing/shielding weight per mm of platform *length* (not width-scaled,
+# since they run along the length), each derived from one reference panel.
+PROTECTION_Q = {
+    "None": 0.0,
+    "Railing": 80 * G / 6400,
+    "Shielding": 250 * G / 6900,
+}
+
+# Stair frame self-weight is assumed to scale linearly with height,
+# calibrated from a single reference stair (3800 mm high, 255 kg frame).
+STAIR_FRAME_Q = 255 * G / 3800  # N per mm of stair height
+STEP_TREAD_DEPTH = 270  # mm
+STEP_GRID = "30x30x2"  # steps always use this grid, regardless of the platform's own grid choice
+
+
+DIAGRAM_HEIGHT = 300  # px - both support diagrams are shown at this same
+# height (widths differ, since the two aren't the same aspect ratio) so
+# switching "Support" doesn't jump the rest of the page up/down.
+
+
+def _load_diagram(path: pathlib.Path) -> Image.Image:
+    img = Image.open(path)
+    width_px, height_px = img.size
+    target_width = round(width_px * DIAGRAM_HEIGHT / height_px)
+    return img.resize((target_width, DIAGRAM_HEIGHT))
+
+
+def platform_panel_weight_kg(width_mm: float, length_mm: float = 3700) -> float:
+    """Self-weight of the grating panel itself (fixed 3700 mm length)."""
+    return (1300 * (2 * length_mm + 5 * (width_mm - 200))) / 1_000_000 * 8 + 10 * 2.5
+
+
+def platform_load_q(width_mm: float, grid: str, protection: str) -> float:
+    """Total distributed load on the platform, N per mm of length."""
+    length_mm = 3700
+    self_weight_q = platform_panel_weight_kg(width_mm, length_mm) * G / length_mm
+    live_load_q = STANDARD_LOAD * G * width_mm / 1_000_000
+    grid_q = GRID_WEIGHTS[grid] * G * width_mm / 1_000_000
+    return self_weight_q + live_load_q + grid_q + PROTECTION_Q[protection]
+
+
+def stairs_weight_kg(height_mm: float, width_mm: float) -> tuple[float, float]:
+    """Returns (total stairs weight kg, weight the platform has to carry N)."""
+    num_steps = height_mm / 200
+    step_area = STEP_TREAD_DEPTH * width_mm
+    step_weight_kg = step_area / 1_000_000 * GRID_WEIGHTS[STEP_GRID]
+    steps_total_kg = step_weight_kg * num_steps
+
+    frame_n = height_mm * STAIR_FRAME_Q
+    total_n = frame_n + steps_total_kg * G
+    # Only half the stairs' weight lands on the platform (as in the source
+    # workbook) - the rest goes straight to the floor at the bottom.
+    supported_n = total_n / 2
+    return total_n / G, supported_n
+
+
+def _positive_root(a: float, b: float, c: float) -> float:
+    """Positive root of a*L^3 + b*L^2 + c = 0 (a,b > 0, c < 0), via
+    bisection. That sign pattern guarantees exactly one positive root, so
+    no need for a general cubic solver / extra numpy dependency."""
+
+    def f(L):
+        return a * L**3 + b * L**2 + c
+
+    lo, hi = 0.0, 1.0
+    while f(hi) < 0:
+        hi *= 2
+    for _ in range(100):
+        mid = (lo + hi) / 2
+        lo, hi = (lo, mid) if f(mid) > 0 else (mid, hi)
+    return (lo + hi) / 2
+
+
+def max_free_length(support: str, stairs: str, q: float, supported_n: float) -> float:
+    if support == "Both sides":
+        return (E * 2 * I_TOT * F_MAX_BOTH_SIDES / (q * 0.013)) ** (1 / 3)
+    if stairs != "Yes":
+        return (8 * E * 2 * I_TOT * F_MAX_ONE_SIDE / q) ** (1 / 3)
+    # One-sided support with stairs attached: the stairs add a point load
+    # at the free end, so length can't be isolated algebraically - see the
+    # module docstring / chat for why this is solved numerically here
+    # instead of matching the spreadsheet's one-off Goal Seek value.
+    return _positive_root(q / 8, supported_n / 3, -2 * E * I_TOT / 1000)
+
+
+st.set_page_config(page_title="Platform / stairs calculator")
+
+# This app only ever runs inside an <iframe> on the site (see index.md),
+# which measures our full content height via a script and resizes itself
+# to fit - so nothing here should scroll internally. Streamlit's own
+# layout normally pins stApp/stAppViewContainer/stMain to the viewport
+# height, with stApp itself clipping (overflow: hidden, no scrollbar) any
+# content taller than that instead of just scrolling it - switch all
+# three to auto/visible so the page's true height is exposed instead.
+# Also trim the default top padding, which exists to leave room for
+# Streamlit's own header/toolbar (dead space here, since there's none of
+# that in an embed).
+st.markdown(
+    """
+    <style>
+    .block-container { padding-top: 1rem; }
+    [data-testid="stApp"],
+    [data-testid="stAppViewContainer"],
+    [data-testid="stMain"] {
+        height: auto !important;
+        overflow: visible !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
+st.title("Platform load and maximum free length")
+
+st.markdown(
+    "Computes the distributed load on a platform, the weight of its "
+    "stairs (if any), and the maximum unsupported length the C-profiles "
+    "can span."
+)
+
+col_a, col_b = st.columns(2)
+width = col_a.selectbox("Width platform (mm)", [800, 900, 1000, 1100, 1200])
+grid = col_b.selectbox("Grid", list(GRID_WEIGHTS.keys()))
+protection = col_a.selectbox("Protection", list(PROTECTION_Q.keys()))
+support = col_b.selectbox("Support", ["One side", "Both sides"])
+
+# Stairs only make sense on a one-sided (cantilevered) platform - the
+# "both sides" formula never factors a stairs load in at all.
+stairs = "No"
+height_stairs = width_stairs = None
+if support == "One side":
+    stairs = st.selectbox("Stairs", ["No", "Yes"])
+    if stairs == "Yes":
+        col_c, col_d = st.columns(2)
+        width_stairs = col_c.selectbox("Width stairs (mm)", [650, 750])
+        height_stairs = col_d.selectbox("Height stairs (mm)", list(range(400, 4001, 200)))
+
+q = platform_load_q(width, grid, protection)
+weight_stairs = supported_n = None
+if stairs == "Yes":
+    weight_stairs, supported_n = stairs_weight_kg(height_stairs, width_stairs)
+
+lmax = max_free_length(support, stairs, q, supported_n or 0.0)
+
+# Reference diagram for whichever support type is currently selected, from
+# the "Max free length" sheet of the source workbook.
+SUPPORT_DIAGRAMS = {
+    "Both sides": IMAGES_DIR / "support_both_sides.png",
+    "One side": IMAGES_DIR / "support_one_side.png",
+}
+with st.container(horizontal_alignment="center"):
+    st.image(_load_diagram(SUPPORT_DIAGRAMS[support]))
+
+st.divider()
+col1, col2, col3 = st.columns(3)
+col1.metric("Load of platform", f"{q * 1000 / G:.1f} kg/m")
+col2.metric(
+    "Weight of stairs",
+    f"{weight_stairs:.1f} kg" if weight_stairs is not None else "N/A",
+)
+col3.metric("Max free length", f"{lmax:.0f} mm")

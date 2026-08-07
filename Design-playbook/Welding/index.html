@@ -1,0 +1,1543 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://adrem-engineering-playbook.com/Design-playbook/Welding/">
+      
+      
+        <link rel="prev" href="../Database-agreements/">
+      
+      
+        <link rel="next" href="../Platforms/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/AdRem_logo_white.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Welding - Engineering playbook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#welding" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Engineering playbook" class="md-header__button md-logo" aria-label="Engineering playbook" data-md-component="logo">
+      
+  <img src="../../assets/AdRem_name+logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Engineering playbook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Welding
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Design playbook
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Calculators/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Calculators
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Standards/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Standards
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Engineering playbook" class="md-nav__button md-logo" aria-label="Engineering playbook" data-md-component="logo">
+      
+  <img src="../../assets/AdRem_name+logo.png" alt="logo">
+
+    </a>
+    Engineering playbook
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design playbook
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Design playbook
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Guidelines-and-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guidelines &amp; structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Corrupt-parts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Corrupt parts and how to solve them
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Bolt-connections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bolt connections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Hole-slot-dimensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hole / slot dimensions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Structure-and-platform-information/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Structure and platform information
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Mounting-machine-parts-on-structures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mounting machine(parts) on structures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Sheet-metal-information/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sheet metal information
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Info-LaserCut/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Info LaserCut
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Info-Saw-Work-SW/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Info Saw Work SW
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Database-agreements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database agreements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welding
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#norm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Norm
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#elementary-welding-symbols-and-how-to-use-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Elementary welding symbols and how to use them
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supplementary-welding-symbols-and-how-to-use-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supplementary welding symbols and how to use them
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arrow-placement-and-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arrow placement and information
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-information-on-welding-symbols" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional information on welding symbols
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weld-size-indication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Weld size indication
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Platforms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platforms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Geared-motors-Siemens/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geared motors (Siemens)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Classification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Classification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Norms-on-electrics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Norms on electrics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Calculators/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Calculators
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Calculators
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Calculators/Info_magnetiet_FeSi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dense Medium Separation - magnetite / FeSi calculator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Calculators/Weight_calculations_platforms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform load and maximum free length
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Standards/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Standards
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Standards
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#norm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Norm
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#elementary-welding-symbols-and-how-to-use-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Elementary welding symbols and how to use them
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supplementary-welding-symbols-and-how-to-use-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supplementary welding symbols and how to use them
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arrow-placement-and-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arrow placement and information
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-information-on-welding-symbols" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional information on welding symbols
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weld-size-indication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Weld size indication
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="welding">Welding</h1>
+<h2 id="norm">Norm</h2>
+<p>The norm for welding and allied processes 'EN ISO 2553' has been renewed since 2013, with a small update in 2019.</p>
+<p>It's basically a compromise between European and American norms, with some slight differences:</p>
+<ul>
+<li>European → System A</li>
+<li>American → System B.</li>
+</ul>
+<p><img alt="European System A vs American System B" class="center" src="../../assets/design-playbook/welding/image091.png" /></p>
+<div class="admonition success">
+<p class="admonition-title">Rule</p>
+<p>Always use the welding symbols according to SYSTEM A.</p>
+</div>
+<p>In the title block on our drawings, it is mentioned that we use the European viewset / standard and 'ISO 13920-AE' for general tolerances for welded structures and the geometrical tolerances.</p>
+<p><img alt="Title block referencing the European viewset and ISO 13920-AE" class="center" src="../../assets/design-playbook/welding/image092.png" /></p>
+<p>In case higher tolerances than according to ISO 13920-AE are required, mainly about deformation due to welding, add a special remark in the tail of the welding symbol.</p>
+<p>It is also possible to refer to a WPS (Welding Procedure Specification) if known.</p>
+<p>A welding symbol is always composed of:</p>
+<ol>
+<li>Arrow line</li>
+<li>Reference line</li>
+<li>Tail</li>
+</ol>
+<p><img alt="The three parts of a welding symbol: arrow line, reference line, tail" class="center" src="../../assets/design-playbook/welding/image093.png" width="300" /></p>
+<h2 id="elementary-welding-symbols-and-how-to-use-them">Elementary welding symbols and how to use them</h2>
+<p>The elementary symbols are defined by norm ISO 2553 and can't be adapted or modified. In case any clarification has to be made, use supplementary symbols and the tail.</p>
+<p><strong>Butt weld</strong> — welding bead &lt; 45°</p>
+<div class="image-row">
+  <img src="../../assets/design-playbook/welding/image094.png" alt="Butt weld symbol" width="408" height="130">
+  <img src="../../assets/design-playbook/welding/image095.png" alt="Butt weld symbol, alternate" width="205" height="130">
+</div>
+
+<p>A certain depth is burnt into the connected parts.</p>
+<p>There are a lot of different butt weld symbols that refer to different joint preparations, but it's appropriate to not designate the welding preparation and use the symbol that doesn't define the joint preparation, leaving it up to the production:</p>
+<p><img alt="Generic butt weld symbol without joint preparation" class="center" src="../../assets/design-playbook/welding/image096.png" width="180" /></p>
+<p><strong>Fillet weld</strong> — welding bead from 45° to 90°</p>
+<div class="image-row" style="gap: 5rem;">
+  <img src="../../assets/design-playbook/welding/image097.png" alt="Fillet weld symbol" width="152" height="150">
+  <img src="../../assets/design-playbook/welding/image098.png" alt="Fillet weld symbol, applied example" width="275" height="150">
+</div>
+
+<p>Adding of a certain amount of material on the connected parts — commonly known as corner welds.</p>
+<div class="image-row" style="gap: 5rem;">
+  <img src="../../assets/design-playbook/welding/image099.png" alt="Fillet weld example 1" width="188" height="150">
+  <img src="../../assets/design-playbook/welding/image100.png" alt="Fillet weld example 2" width="193" height="150">
+</div>
+
+<p><strong>Combination of Butt and Fillet</strong></p>
+<p>Where you burn into the connected parts and add a second layer of material on top of it — for this kind of more advanced weld, ask a manager.</p>
+<p><img alt="Combined butt and fillet weld symbol" class="center" src="../../assets/design-playbook/welding/image101.png" width="220" /></p>
+<p><strong>Edge weld</strong> — welding bead &gt; 90°</p>
+<p><img alt="Edge weld symbol" class="center" src="../../assets/design-playbook/welding/image102.png" width="220" /></p>
+<p>Adding of a certain amount of material on the connected parts.</p>
+<p><img alt="Edge weld applied example" class="center" src="../../assets/design-playbook/welding/image103.png" width="350" /></p>
+<p><strong>Flare V weld</strong> — to connect 2 round surfaces</p>
+<p><img alt="Flare V weld symbol" class="center" src="../../assets/design-playbook/welding/image104.png" width="200" /></p>
+<p><strong>Flare bevel</strong> — to connect 1 round surface on a flat one</p>
+<div class="image-row" style="gap: 5rem;">
+  <img src="../../assets/design-playbook/welding/image105.png" alt="Flare bevel weld symbol" width="150" height="150">
+  <img src="../../assets/design-playbook/welding/image106.png" alt="Flare bevel weld applied example" width="169" height="150">
+</div>
+
+<p>When used to weld a net onto a frame, the dimensions of the net have to be clearly identified:</p>
+<p><img alt="Net welded onto a frame with dimensions specified" class="center" src="../../assets/design-playbook/welding/image107.png" width="700" /></p>
+<p><strong>Plug weld</strong> — to fill holes and connect groove / tongue connections</p>
+<p><img alt="Plug weld symbol" class="center" src="../../assets/design-playbook/welding/image108.png" width="200" /></p>
+<p><strong>Resistance Spot Weld or Projection Weld</strong> — to be used for welding nuts</p>
+<p><img alt="Resistance spot / projection weld symbol" class="center" src="../../assets/design-playbook/welding/image109.png" width="250" /></p>
+<p><strong>Stud weld</strong> — for stud bolts</p>
+<p><img alt="Stud weld symbol" class="center" src="../../assets/design-playbook/welding/image110.png" width="300" /></p>
+<h2 id="supplementary-welding-symbols-and-how-to-use-them">Supplementary welding symbols and how to use them</h2>
+<p>These symbols are used to add info on how to perform the weld, but not on the operations to perform afterwards (those are specified in text on the tail of the symbol).</p>
+<p><strong>Field weld</strong> — the weld is done on site, during mounting. This can be very useful to avoid misalignment of flanges, for example.</p>
+<p><img alt="Field weld symbol" class="center" src="../../assets/design-playbook/welding/image111.png" width="220" /></p>
+<p><strong>Flush</strong> — to specify that the weld has to be flush-finished</p>
+<p><img alt="Flush weld symbol" class="center" src="../../assets/design-playbook/welding/image112.png" width="260" /></p>
+<p><strong>Convex</strong></p>
+<p><img alt="Convex weld symbol" class="center" src="../../assets/design-playbook/welding/image113.png" width="260" /></p>
+<p><strong>Concave</strong></p>
+<p><img alt="Concave weld symbol" class="center" src="../../assets/design-playbook/welding/image114.png" width="260" /></p>
+<p><strong>Weld all-round symbol</strong> — to indicate with a single symbol that the part needs to be welded all the way around, in case the weld type and dimension of the weld remain the same.</p>
+<div class="image-row" style="gap: 3rem;">
+  <img src="../../assets/design-playbook/welding/image115.png" alt="Weld all-round symbol example 1" width="254" height="200">
+  <img src="../../assets/design-playbook/welding/image116.png" alt="Weld all-round symbol example 2" width="217" height="200">
+  <img src="../../assets/design-playbook/welding/image117.png" alt="Weld all-round symbol example 3" width="135" height="200">
+</div>
+
+<div class="admonition success">
+<p class="admonition-title">Rule</p>
+<p>This symbol is also used for circular welding to insist on the fact that the weld has to be continuous and the start &amp; stop points are the same.</p>
+</div>
+<p><img alt="Weld all-round symbol used for circular welding" class="center" src="../../assets/design-playbook/welding/image118.png" width="220" /></p>
+<p><strong>Weld between 2 points</strong> — to indicate a continuous weld along several edges, in all directions, having the exact same characteristics from start to end points.</p>
+<div class="image-row" style="gap: 5rem;">
+  <img src="../../assets/design-playbook/welding/image119.png" alt="Weld between two points example 1" width="226" height="150">
+  <img src="../../assets/design-playbook/welding/image120.png" alt="Weld between two points example 2" width="197" height="150">
+</div>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The arrow can be drawn with ALT + 26.</p>
+</div>
+<p><strong>Chain intermittent welds</strong></p>
+<p><img alt="Chain intermittent weld example" class="center" src="../../assets/design-playbook/welding/image121.png" width="800" /></p>
+<div class="admonition success">
+<p class="admonition-title">Rules</p>
+<ul>
+<li>The number of welds has to be specified only if relevant.</li>
+<li>The lengths of weld and of space don't have to be exact to the mm, but rounded.</li>
+</ul>
+</div>
+<p><strong>Staggered intermittent weld</strong> — less deformation of thin plates</p>
+<p><img alt="Staggered intermittent weld example" class="center" src="../../assets/design-playbook/welding/image122.png" width="800" /></p>
+<div class="admonition success">
+<p class="admonition-title">Rules</p>
+<ul>
+<li>The number of welds has to be specified only if relevant.</li>
+<li>The lengths of weld and of space don't have to be exact to the mm, but rounded.</li>
+</ul>
+</div>
+<h2 id="arrow-placement-and-information">Arrow placement and information</h2>
+<p>European standards use the following rules:</p>
+<ul>
+<li>According to SYSTEM A, the dashed line is always underneath the reference line.</li>
+<li>The arrow always points to a visible line (never to a hidden line).</li>
+<li>The location of the weld (in red) is defined by the position of the arrow and the position of the welding symbol regarding the dashed line:</li>
+</ul>
+<div class="image-row" style="gap: 5rem;">
+  <figure>
+    <img src="../../assets/design-playbook/welding/image123.png" alt="Fig.1" width="152" height="130">
+    <figcaption>Fig. 1</figcaption>
+  </figure>
+  <figure>
+    <img src="../../assets/design-playbook/welding/image124.png" alt="Fig.2" width="176" height="130">
+    <figcaption>Fig. 2</figcaption>
+  </figure>
+  <figure>
+    <img src="../../assets/design-playbook/welding/image125.png" alt="Fig.3" width="154" height="130">
+    <figcaption>Fig. 3</figcaption>
+  </figure>
+</div>
+
+<ul>
+<li>One side is welded: the side of the arrow. The symbol is placed on top. (Fig. 1)</li>
+<li>One side is welded: the opposite side of the arrow. The symbol is placed at the bottom. (Fig. 2)</li>
+<li>Both sides have the same weld: the dashed line is removed. (Fig. 3)</li>
+<li>Both sides have different welds: the dashed line is kept. (Fig. 4)</li>
+</ul>
+<figure class="center">
+  <img src="../../assets/design-playbook/welding/image126.png" alt="Fig.4 - dashed line kept for different welds on both sides" width="350">
+  <figcaption>Fig. 4</figcaption>
+</figure>
+
+<ul>
+<li>When it's not important to specify which part needs to be prepared, or when no preparation is needed, multiple (broken) lines can be used to indicate identical welds.</li>
+</ul>
+<p><img alt="Multiple broken lines indicating identical welds" class="center" src="../../assets/design-playbook/welding/image127.png" width="200" /></p>
+<ul>
+<li>When it's important to specify which part needs to be prepared, use a broken arrow.</li>
+</ul>
+<p><img alt="Broken arrow specifying which part needs preparation" class="center" src="../../assets/design-playbook/welding/image128.png" width="180" /></p>
+<h2 id="additional-information-on-welding-symbols">Additional information on welding symbols</h2>
+<p>Additional information and special remarks about the weld can be added to the symbol in the tail.</p>
+<div class="admonition success">
+<p class="admonition-title">Rule</p>
+<p>The tail has to be <strong>open</strong> for additional information and <strong>closed</strong> for a reference to any document (such as a WPS).</p>
+</div>
+<p><img alt="Open vs closed tail on a welding symbol" class="center" src="../../assets/design-playbook/welding/image129.png" /></p>
+<p>Common remarks are:</p>
+<ul>
+<li>Watertight</li>
+<li>Leave flow holes free</li>
+<li>Leave free near mounting holes</li>
+<li>Smooth finish (polish)</li>
+<li>Flat grind finish</li>
+<li>Prepare for watertight sealing</li>
+<li>...</li>
+</ul>
+<p>Combinations of these remarks are also possible.</p>
+<p><img alt="Combined remarks example 1" class="center" src="../../assets/design-playbook/welding/image130.png" width="280" />
+<img alt="Combined remarks example 2" class="center" src="../../assets/design-playbook/welding/image131.png" width="280" />
+<img alt="Combined remarks example 3" class="center" src="../../assets/design-playbook/welding/image132.png" width="280" /></p>
+<p>Crucial welds should be named and refer to the 'WPS' (Welding Procedure Specification) — has to be discussed with a manager.</p>
+<p><img alt="Weld referencing a WPS document" class="center" src="../../assets/design-playbook/welding/image133.png" width="220" /></p>
+<h2 id="weld-size-indication">Weld size indication</h2>
+<p>Defining the size of the weld should be calculated by a welding engineer, but for simple applications you can use the following thumb rules.</p>
+<p><strong>Fillet weld</strong></p>
+<p>Following the European standard, the size of the corner weld must be indicated by <code>a</code>.</p>
+<p><img alt="Fillet weld size indicated by 'a'" class="center" src="../../assets/design-playbook/welding/image134.png" width="180" /></p>
+<p>American standards use <code>z</code>.</p>
+<p><img alt="American fillet weld size indicated by 'z'" class="center" src="../../assets/design-playbook/welding/image135.png" width="260" /></p>
+<p><code>a</code> is calculated as follows:</p>
+<ul>
+<li>Double sided weld: a ≥ 0.6 x t</li>
+<li>Single sided weld: a ≥ 0.8 x t</li>
+</ul>
+<p>Where <code>t</code> is the thickness of the thinnest plate.</p>
+<p>For simple welds, the following weld sizes can be used, depending on the plate thickness:</p>
+<div class="compact-table">
+
+<table>
+<tr><th>Plate thickness</th><th>Weld size</th></tr>
+<tr><td>2</td><td>a1,5</td></tr>
+<tr><td>3</td><td>a2</td></tr>
+<tr><td>4</td><td>a2</td></tr>
+<tr><td>5</td><td>a3</td></tr>
+<tr><td>6</td><td>a4</td></tr>
+<tr><td>8</td><td>a5</td></tr>
+<tr><td>10</td><td>a7</td></tr>
+</table>
+
+</div>
+
+<div class="admonition warning">
+<p class="admonition-title">Important</p>
+<p>Always check that there is enough space to weld. If <code>a3</code> is specified, 3 x 1.4 = 4.2 mm minimum of available surface is required.</p>
+</div>
+<p><strong>Butt weld</strong></p>
+<p>If there is no weld size mentioned → full weld-through.</p>
+<p><img alt="Butt weld with no size mentioned - full weld-through" class="center" src="../../assets/design-playbook/welding/image136.png" width="200" /></p>
+<p>If there is a weld size mentioned → depth of penetration.</p>
+<p><img alt="Butt weld with size mentioned - depth of penetration" class="center" src="../../assets/design-playbook/welding/image137.png" width="200" /></p>
+<p>If the application isn't that simple anymore, it's better to calculate or discuss with a manager or a welding engineer. To calculate you can use the following tools:</p>
+<ul>
+<li>Fillet weld calculation static load: <a href="https://werktuigbouw.nl/sub22.htm">https://werktuigbouw.nl/sub22.htm</a></li>
+<li>Butt weld calculation dynamic load: <a href="https://werktuigbouw.nl/sub22.htm">https://werktuigbouw.nl/sub22.htm</a></li>
+<li><code>R:\Nota's Ontwerp en Technische Catalogi\00_Technisch Praktisch-Theorie\Lassen-toelaatbare belasting WL.pdf</code></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      ©2026 Ad Rem
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://www.linkedin.com/company/advanced-design-of-recycling-machines/posts/?feedView=all" target="_blank" rel="noopener" title="Ad Rem on LinkedIn" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.indexes", "navigation.top", "toc.follow", "search.suggest"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/iframe-resize.js"></script>
+      
+    
+  </body>
+</html>
